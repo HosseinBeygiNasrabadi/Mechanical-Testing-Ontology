@@ -1,0 +1,1314 @@
+@prefix : <https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix iof: <https://github.com/iofoundry/Core/> .
+@prefix mto: <https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mseo: <https://purl.matolab.org/mseo/mid/> .
+@prefix qudt: <https://qudt.org/2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/> .
+
+<https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/> rdf:type owl:Ontology ;
+                                                                                               owl:imports <https://gitlab.com/kupferdigital/process-graphs/brinell-hardness-test/-/raw/main/BrinellTest.ttl/> ,
+                                                                                                           <https://gitlab.com/kupferdigital/process-graphs/tensile-test/-/raw/main/TensileTest.ttl/> ,
+                                                                                                           <https://gitlab.com/kupferdigital/process-graphs/vickers-hardness-test/-/raw/main/VickersTest.ttl/> ;
+                                                                                               dc:creator "Birgit Skrotzki" ,
+                                                                                                          "Hossein Beygi Nasrabadi" ,
+                                                                                                          "Miriam Eisenbart" ,
+                                                                                                          "Thomas Hanke" ;
+                                                                                               dc:title "Mechanical Testing Ontology (MTO)" ;
+                                                                                               owl:versionInfo "2.1.3" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/bearer_of
+bfo:bearer_of rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/contains
+bfo:contains rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/derives_into
+bfo:derives_into rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/has_function
+bfo:has_function rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf bfo:bearer_of .
+
+
+###  http://purl.obolibrary.org/obo/has_part
+bfo:has_part rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/has_participant
+bfo:has_participant rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/has_quality
+bfo:has_quality rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf bfo:bearer_of .
+
+
+###  http://purl.obolibrary.org/obo/is_carrier_of
+bfo:is_carrier_of rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/participates_in
+bfo:participates_in rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/affects
+cco:affects rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/caused_by
+cco:caused_by rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/described_by
+cco:described_by rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cco:is_subject_of .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/designated_by
+cco:designated_by rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cco:is_subject_of .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_accessory
+cco:has_accessory rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_agent
+cco:has_agent rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_input
+cco:has_input rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_output
+cco:has_output rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_process_part
+cco:has_process_part rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf bfo:has_part .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_cause_of
+cco:is_cause_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_input_of
+cco:is_input_of rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf bfo:participates_in .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_made_of
+cco:is_made_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_measured_by
+cco:is_measured_by rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cco:described_by .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_subject_of
+cco:is_subject_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/occurs_on
+cco:occurs_on rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/process_precedes
+cco:process_precedes rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/process_started_by
+cco:process_started_by rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf cco:caused_by .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/uses
+cco:uses rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/uses_measurement_unit
+cco:uses_measurement_unit rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf bfo:is_carrier_of .
+
+
+###  https://purl.matolab.org/mseo/mid/in_accordance_with
+mseo:in_accordance_with rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf cco:described_by .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/Continuant
+bfo:Continuant rdf:type owl:Class ;
+               rdfs:subClassOf bfo:Entity .
+
+
+###  http://purl.obolibrary.org/obo/Disposition
+bfo:Disposition rdf:type owl:Class ;
+                rdfs:subClassOf bfo:RealizableEntity .
+
+
+###  http://purl.obolibrary.org/obo/Entity
+bfo:Entity rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/Function
+bfo:Function rdf:type owl:Class ;
+             rdfs:subClassOf bfo:Disposition .
+
+
+###  http://purl.obolibrary.org/obo/GenericallyDependentContinuant
+bfo:GenericallyDependentContinuant rdf:type owl:Class ;
+                                   rdfs:subClassOf bfo:Continuant .
+
+
+###  http://purl.obolibrary.org/obo/History
+bfo:History rdf:type owl:Class ;
+            rdfs:subClassOf bfo:Process .
+
+
+###  http://purl.obolibrary.org/obo/ImmaterialEntity
+bfo:ImmaterialEntity rdf:type owl:Class ;
+                     rdfs:subClassOf bfo:IndependentContinuant .
+
+
+###  http://purl.obolibrary.org/obo/IndependentContinuant
+bfo:IndependentContinuant rdf:type owl:Class ;
+                          rdfs:subClassOf bfo:Continuant .
+
+
+###  http://purl.obolibrary.org/obo/MaterialEntity
+bfo:MaterialEntity rdf:type owl:Class ;
+                   rdfs:subClassOf bfo:IndependentContinuant .
+
+
+###  http://purl.obolibrary.org/obo/Object
+bfo:Object rdf:type owl:Class ;
+           rdfs:subClassOf bfo:MaterialEntity .
+
+
+###  http://purl.obolibrary.org/obo/ObjectAggregative
+bfo:ObjectAggregative rdf:type owl:Class ;
+                      rdfs:subClassOf bfo:MaterialEntity .
+
+
+###  http://purl.obolibrary.org/obo/Occurrent
+bfo:Occurrent rdf:type owl:Class ;
+              rdfs:subClassOf bfo:Entity .
+
+
+###  http://purl.obolibrary.org/obo/OneDimensionalTemporalRegion
+bfo:OneDimensionalTemporalRegion rdf:type owl:Class ;
+                                 rdfs:subClassOf bfo:TemporalRegion .
+
+
+###  http://purl.obolibrary.org/obo/Process
+bfo:Process rdf:type owl:Class ;
+            rdfs:subClassOf bfo:Occurrent .
+
+
+###  http://purl.obolibrary.org/obo/ProcessProfile
+bfo:ProcessProfile rdf:type owl:Class ;
+                   rdfs:subClassOf bfo:Process .
+
+
+###  http://purl.obolibrary.org/obo/Quality
+bfo:Quality rdf:type owl:Class ;
+            rdfs:subClassOf bfo:SpecificallyDependentContinuant .
+
+
+###  http://purl.obolibrary.org/obo/RealizableEntity
+bfo:RealizableEntity rdf:type owl:Class ;
+                     rdfs:subClassOf bfo:SpecificallyDependentContinuant .
+
+
+###  http://purl.obolibrary.org/obo/RelationalQuality
+bfo:RelationalQuality rdf:type owl:Class ;
+                      rdfs:subClassOf bfo:Quality .
+
+
+###  http://purl.obolibrary.org/obo/SpatialRegion
+bfo:SpatialRegion rdf:type owl:Class ;
+                  rdfs:subClassOf bfo:ImmaterialEntity .
+
+
+###  http://purl.obolibrary.org/obo/SpecificallyDependentContinuant
+bfo:SpecificallyDependentContinuant rdf:type owl:Class ;
+                                    rdfs:subClassOf bfo:Continuant .
+
+
+###  http://purl.obolibrary.org/obo/TemporalRegion
+bfo:TemporalRegion rdf:type owl:Class ;
+                   rdfs:subClassOf bfo:Occurrent .
+
+
+###  http://purl.obolibrary.org/obo/ThreeDimensionalSpatialRegion
+bfo:ThreeDimensionalSpatialRegion rdf:type owl:Class ;
+                                  rdfs:subClassOf bfo:SpatialRegion .
+
+
+###  http://purl.obolibrary.org/obo/TwoDimensionalSpatialRegion
+bfo:TwoDimensionalSpatialRegion rdf:type owl:Class ;
+                                rdfs:subClassOf bfo:SpatialRegion .
+
+
+###  http://purl.obolibrary.org/obo/ZeroDimensionalTemporalRegion
+bfo:ZeroDimensionalTemporalRegion rdf:type owl:Class ;
+                                  rdfs:subClassOf bfo:TemporalRegion .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Act
+cco:Act rdf:type owl:Class ;
+        rdfs:subClassOf bfo:Process .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfArtifactProcessing
+cco:ActOfArtifactProcessing rdf:type owl:Class ;
+                            rdfs:subClassOf cco:IntentionalAct .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfLocationChange
+cco:ActOfLocationChange rdf:type owl:Class ;
+                        rdfs:subClassOf cco:ActOfMotion .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfManufactoring
+cco:ActOfManufactoring rdf:type owl:Class ;
+                       rdfs:subClassOf cco:ActOfArtifactProcessing .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMeasuring
+cco:ActOfMeasuring rdf:type owl:Class ;
+                   rdfs:subClassOf cco:IntentionalAct .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMotion
+cco:ActOfMotion rdf:type owl:Class ;
+                rdfs:subClassOf cco:IntentionalAct .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfPositionChange
+cco:ActOfPositionChange rdf:type owl:Class ;
+                        rdfs:subClassOf cco:ActOfMotion .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Algorithm
+cco:Algorithm rdf:type owl:Class ;
+              rdfs:subClassOf cco:DirectiveInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Amount
+cco:Amount rdf:type owl:Class ;
+           rdfs:subClassOf bfo:Quality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Amplitude
+cco:Amplitude rdf:type owl:Class ;
+              rdfs:subClassOf bfo:ProcessProfile .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Artifact
+cco:Artifact rdf:type owl:Class ;
+             rdfs:subClassOf bfo:Object .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction
+cco:ArtifactFunction rdf:type owl:Class ;
+                     rdfs:subClassOf bfo:Function .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactHistory
+cco:ArtifactHistory rdf:type owl:Class ;
+                    rdfs:subClassOf bfo:History .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/CalendarDateIdentifier
+cco:CalendarDateIdentifier rdf:type owl:Class ;
+                           rdfs:subClassOf cco:DateIdentifier .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DateIdentifier
+cco:DateIdentifier rdf:type owl:Class ;
+                   rdfs:subClassOf cco:TemporalIntervalIdentifier .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Day
+cco:Day rdf:type owl:Class ;
+        rdfs:subClassOf bfo:OneDimensionalTemporalRegion .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Depth
+cco:Depth rdf:type owl:Class ;
+          rdfs:subClassOf cco:OneDimensionalExtent .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity
+cco:DescriptiveInformationContentEntity rdf:type owl:Class ;
+                                        rdfs:subClassOf cco:InformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DesignativeInformationContentEntity
+cco:DesignativeInformationContentEntity rdf:type owl:Class ;
+                                        rdfs:subClassOf cco:InformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DeviationMeasurementInformationContentEntity
+cco:DeviationMeasurementInformationContentEntity rdf:type owl:Class ;
+                                                 rdfs:subClassOf cco:MeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Diameter
+cco:Diameter rdf:type owl:Class ;
+             rdfs:subClassOf cco:OneDimensionalExtent .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity
+cco:DirectiveInformationContentEntity rdf:type owl:Class ;
+                                      rdfs:subClassOf cco:InformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DistanceMeasurementInformationContentEntity
+cco:DistanceMeasurementInformationContentEntity rdf:type owl:Class ;
+                                                rdfs:subClassOf cco:RatioMeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Fatigability
+cco:Fatigability rdf:type owl:Class ;
+                 rdfs:subClassOf bfo:RealizableEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Force
+cco:Force rdf:type owl:Class ;
+          rdfs:subClassOf bfo:ProcessProfile .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Frequency
+cco:Frequency rdf:type owl:Class ;
+              rdfs:subClassOf bfo:ProcessProfile .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/GroupOfAgents
+cco:GroupOfAgents rdf:type owl:Class ;
+                  rdfs:subClassOf bfo:ObjectAggregative .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Hardness
+cco:Hardness rdf:type owl:Class ;
+             rdfs:subClassOf bfo:Quality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact
+cco:InformationBearingArtifact rdf:type owl:Class ;
+                               rdfs:subClassOf cco:Artifact .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity
+cco:InformationContentEntity rdf:type owl:Class ;
+                             rdfs:subClassOf bfo:GenericallyDependentContinuant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct
+cco:IntentionalAct rdf:type owl:Class ;
+                   rdfs:subClassOf cco:Act .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Length
+cco:Length rdf:type owl:Class ;
+           rdfs:subClassOf cco:OneDimensionalExtent .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/MeasurementInformationContentEntity
+cco:MeasurementInformationContentEntity rdf:type owl:Class ;
+                                        rdfs:subClassOf cco:InformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/MultiSecondTemporalInterval
+cco:MultiSecondTemporalInterval rdf:type owl:Class ;
+                                rdfs:subClassOf bfo:OneDimensionalTemporalRegion .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/NonNameIdentifier
+cco:NonNameIdentifier rdf:type owl:Class ;
+                      rdfs:subClassOf cco:DesignativeInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/OneDimensionalExtent
+cco:OneDimensionalExtent rdf:type owl:Class ;
+                         rdfs:subClassOf cco:SizeQuality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Organization
+cco:Organization rdf:type owl:Class ;
+                 rdfs:subClassOf cco:GroupOfAgents .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/PlanSpecification
+cco:PlanSpecification rdf:type owl:Class ;
+                      rdfs:subClassOf cco:DirectiveInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfMaterial
+cco:PortionOfMaterial rdf:type owl:Class ;
+                      rdfs:subClassOf cco:PortionOfProcessedMaterial .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial
+cco:PortionOfProcessedMaterial rdf:type owl:Class ;
+                               rdfs:subClassOf cco:Artifact .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ProportionalRatioMeasurementInformationContentEntity
+cco:ProportionalRatioMeasurementInformationContentEntity rdf:type owl:Class ;
+                                                         rdfs:subClassOf cco:RatioMeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/RatioMeasurementInformationContentEntity
+cco:RatioMeasurementInformationContentEntity rdf:type owl:Class ;
+                                             rdfs:subClassOf cco:MeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ReliabilityMeasurementInformationContentEntity
+cco:ReliabilityMeasurementInformationContentEntity rdf:type owl:Class ;
+                                                   rdfs:subClassOf cco:MeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ShapeQuality
+cco:ShapeQuality rdf:type owl:Class ;
+                 rdfs:subClassOf bfo:Quality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/SizeQuality
+cco:SizeQuality rdf:type owl:Class ;
+                rdfs:subClassOf bfo:Quality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/SpatialOrientation
+cco:SpatialOrientation rdf:type owl:Class ;
+                       rdfs:subClassOf bfo:RelationalQuality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Speed
+cco:Speed rdf:type owl:Class ;
+          rdfs:subClassOf bfo:ProcessProfile .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Spherical
+cco:Spherical rdf:type owl:Class ;
+              rdfs:subClassOf cco:ThreeDimensionalShape .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Strength
+cco:Strength rdf:type owl:Class ;
+             rdfs:subClassOf bfo:Quality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Temperature
+cco:Temperature rdf:type owl:Class ;
+                rdfs:subClassOf bfo:Quality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/TemporalIntervalIdentifier
+cco:TemporalIntervalIdentifier rdf:type owl:Class ;
+                               rdfs:subClassOf cco:TemporalRegionIdentifier .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/TemporalRegionIdentifier
+cco:TemporalRegionIdentifier rdf:type owl:Class ;
+                             rdfs:subClassOf cco:DesignativeInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Thickness
+cco:Thickness rdf:type owl:Class ;
+              rdfs:subClassOf cco:Depth .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ThreeDimensionalExtent
+cco:ThreeDimensionalExtent rdf:type owl:Class ;
+                           rdfs:subClassOf cco:SizeQuality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ThreeDimensionalShape
+cco:ThreeDimensionalShape rdf:type owl:Class ;
+                          rdfs:subClassOf cco:ShapeQuality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/TwoDimensionalExtent
+cco:TwoDimensionalExtent rdf:type owl:Class ;
+                         rdfs:subClassOf cco:SizeQuality .
+
+
+###  https://github.com/iofoundry/Core/ManufacturingProcess
+iof:ManufacturingProcess rdf:type owl:Class ;
+                         rdfs:subClassOf iof:PlannedProcess .
+
+
+###  https://github.com/iofoundry/Core/MaterialResource
+iof:MaterialResource rdf:type owl:Class ;
+                     rdfs:subClassOf bfo:MaterialEntity .
+
+
+###  https://github.com/iofoundry/Core/MeasurementProcess
+iof:MeasurementProcess rdf:type owl:Class ;
+                       rdfs:subClassOf iof:PlannedProcess .
+
+
+###  https://github.com/iofoundry/Core/PlannedProcess
+iof:PlannedProcess rdf:type owl:Class ;
+                   rdfs:subClassOf bfo:Process .
+
+
+###  https://github.com/iofoundry/Core/TransportProcess
+iof:TransportProcess rdf:type owl:Class ;
+                     rdfs:subClassOf iof:PlannedProcess .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/AbsorbedImpactEnergy
+mto:AbsorbedImpactEnergy rdf:type owl:Class ;
+                         rdfs:subClassOf mto:ImpactEnergy .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ActOfArtifactVerification
+mto:ActOfArtifactVerification rdf:type owl:Class ;
+                              rdfs:subClassOf cco:IntentionalAct .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ActualAbsorbedImpactEnergy
+mto:ActualAbsorbedImpactEnergy rdf:type owl:Class ;
+                               rdfs:subClassOf mto:AbsorbedImpactEnergy .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Anvil
+mto:Anvil rdf:type owl:Class ;
+          rdfs:subClassOf cco:Artifact .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/AxialStrain
+mto:AxialStrain rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Strain .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/AxialStress
+mto:AxialStress rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Stress .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/BendingTest
+mto:BendingTest rdf:type owl:Class ;
+                rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/BrinellHardness
+mto:BrinellHardness rdf:type owl:Class ;
+                    rdfs:subClassOf cco:Hardness .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/BrinellHardnessTest
+mto:BrinellHardnessTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:HardnessTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/BrinellHardnessTestEquipment
+mto:BrinellHardnessTestEquipment rdf:type owl:Class ;
+                                 rdfs:subClassOf mseo:Equipment .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/BrittleFracture
+mto:BrittleFracture rdf:type owl:Class ;
+                    rdfs:subClassOf mto:Fracture .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CalibrationAccessory
+mto:CalibrationAccessory rdf:type owl:Class ;
+                         rdfs:subClassOf cco:Artifact .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CharpyTest
+mto:CharpyTest rdf:type owl:Class ;
+               rdfs:subClassOf mto:ImpactTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CompressionTest
+mto:CompressionTest rdf:type owl:Class ;
+                    rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CrackExtensionResistanceCurve
+mto:CrackExtensionResistanceCurve rdf:type owl:Class ;
+                                  rdfs:subClassOf mseo:ImageMetadataSet .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CrackLength
+mto:CrackLength rdf:type owl:Class ;
+                rdfs:subClassOf cco:Length .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CreepCurve
+mto:CreepCurve rdf:type owl:Class ;
+               rdfs:subClassOf mseo:ImageMetadataSet .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CreepElongationTime
+mto:CreepElongationTime rdf:type owl:Class ;
+                        rdfs:subClassOf mto:CreepRuptureTime .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CreepRuptureTime
+mto:CreepRuptureTime rdf:type owl:Class ;
+                     rdfs:subClassOf bfo:ZeroDimensionalTemporalRegion .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CreepStrength
+mto:CreepStrength rdf:type owl:Class ;
+                  rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CreepTest
+mto:CreepTest rdf:type owl:Class ;
+              rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Cycle
+mto:Cycle rdf:type owl:Class ;
+          rdfs:subClassOf bfo:ProcessProfile .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CyclicStrengthCoefficient
+mto:CyclicStrengthCoefficient rdf:type owl:Class ;
+                              rdfs:subClassOf mto:FatigueStrength .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/CyclicYieldStrength
+mto:CyclicYieldStrength rdf:type owl:Class ;
+                        rdfs:subClassOf mseo:YieldStrenght .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Diagonal
+mto:Diagonal rdf:type owl:Class ;
+             rdfs:subClassOf cco:OneDimensionalExtent .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/DirectVerification
+mto:DirectVerification rdf:type owl:Class ;
+                       rdfs:subClassOf mto:ActOfArtifactVerification .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/DistanceBetweenIndentationAndEdge
+mto:DistanceBetweenIndentationAndEdge rdf:type owl:Class ;
+                                      rdfs:subClassOf cco:DistanceMeasurementInformationContentEntity .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/DistanceBetweenIndentations
+mto:DistanceBetweenIndentations rdf:type owl:Class ;
+                                rdfs:subClassOf cco:DistanceMeasurementInformationContentEntity .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/DuctileFracture
+mto:DuctileFracture rdf:type owl:Class ;
+                    rdfs:subClassOf mto:Fracture .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Ductility
+mto:Ductility rdf:type owl:Class ;
+              rdfs:subClassOf mto:Formability .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ElasticLimit
+mto:ElasticLimit rdf:type owl:Class ;
+                 rdfs:subClassOf mseo:Stress .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Elongation
+mto:Elongation rdf:type owl:Class ;
+               rdfs:subClassOf mseo:Deformation .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Energy
+mto:Energy rdf:type owl:Class ;
+           rdfs:subClassOf bfo:ProcessProfile .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Extensometer
+mto:Extensometer rdf:type owl:Class ;
+                 rdfs:subClassOf cco:Artifact .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/FatigueLife
+mto:FatigueLife rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Number .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/FatigueLimit
+mto:FatigueLimit rdf:type owl:Class ;
+                 rdfs:subClassOf mto:FatigueStrength .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/FatigueStrength
+mto:FatigueStrength rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/FatigueTest
+mto:FatigueTest rdf:type owl:Class ;
+                rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Formability
+mto:Formability rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Deformation .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Fracture
+mto:Fracture rdf:type owl:Class ;
+             rdfs:subClassOf bfo:Disposition .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/FractureToughness
+mto:FractureToughness rdf:type owl:Class ;
+                      rdfs:subClassOf mto:Toughness .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/FractureToughnessTest
+mto:FractureToughnessTest rdf:type owl:Class ;
+                          rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/GaugeLength
+mto:GaugeLength rdf:type owl:Class ;
+                rdfs:subClassOf cco:Length .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/HardnessCalibrationMachine
+mto:HardnessCalibrationMachine rdf:type owl:Class ;
+                               rdfs:subClassOf cco:Artifact .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/HardnessTest
+mto:HardnessTest rdf:type owl:Class ;
+                 rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/HardnessTestMachine
+mto:HardnessTestMachine rdf:type owl:Class ;
+                        rdfs:subClassOf cco:Artifact .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/HighCycleFatigueTest
+mto:HighCycleFatigueTest rdf:type owl:Class ;
+                         rdfs:subClassOf mto:FatigueTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/HystersisLoop
+mto:HystersisLoop rdf:type owl:Class ;
+                  rdfs:subClassOf mseo:ImageMetadataSet .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ImpactEnergy
+mto:ImpactEnergy rdf:type owl:Class ;
+                 rdfs:subClassOf mto:Energy .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ImpactTest
+mto:ImpactTest rdf:type owl:Class ;
+               rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Indentation
+mto:Indentation rdf:type owl:Class ;
+                rdfs:subClassOf bfo:TwoDimensionalSpatialRegion .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/IndentationModulus
+mto:IndentationModulus rdf:type owl:Class ;
+                       rdfs:subClassOf mseo:ElasticModulus .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Indenter
+mto:Indenter rdf:type owl:Class ;
+             rdfs:subClassOf cco:Artifact .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/IndirectVerification
+mto:IndirectVerification rdf:type owl:Class ;
+                         rdfs:subClassOf mto:ActOfArtifactVerification .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/IzodTest
+mto:IzodTest rdf:type owl:Class ;
+             rdfs:subClassOf mto:ImpactTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/JRCurve
+mto:JRCurve rdf:type owl:Class ;
+            rdfs:subClassOf mseo:ImageMetadataSet .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/KnoopHardness
+mto:KnoopHardness rdf:type owl:Class ;
+                  rdfs:subClassOf cco:Hardness .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/KnoopHardnessTest
+mto:KnoopHardnessTest rdf:type owl:Class ;
+                      rdfs:subClassOf mto:HardnessTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/LatheralExpansion
+mto:LatheralExpansion rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:Deformation .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/LinearStrain
+mto:LinearStrain rdf:type owl:Class ;
+                 rdfs:subClassOf mseo:Strain .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/LowCycleFatigueTest
+mto:LowCycleFatigueTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:FatigueTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/MartensHardness
+mto:MartensHardness rdf:type owl:Class ;
+                    rdfs:subClassOf cco:Hardness .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/MartensHardnessTest
+mto:MartensHardnessTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:HardnessTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/MechanicalTesting
+mto:MechanicalTesting rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:Experiment .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/NanoindentationTest
+mto:NanoindentationTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/NormalStress
+mto:NormalStress rdf:type owl:Class ;
+                 rdfs:subClassOf mseo:Stress .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Notch
+mto:Notch rdf:type owl:Class ;
+          rdfs:subClassOf bfo:TwoDimensionalSpatialRegion .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/OpticalMeasuringSystem
+mto:OpticalMeasuringSystem rdf:type owl:Class ;
+                           rdfs:subClassOf cco:Artifact .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ParallelLength
+mto:ParallelLength rdf:type owl:Class ;
+                   rdfs:subClassOf cco:Length .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/PercentageCreepElongation
+mto:PercentageCreepElongation rdf:type owl:Class ;
+                              rdfs:subClassOf mto:Elongation .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/PercentageElongation
+mto:PercentageElongation rdf:type owl:Class ;
+                         rdfs:subClassOf mto:Elongation .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/PercentageElongationAfterCreepRepture
+mto:PercentageElongationAfterCreepRepture rdf:type owl:Class ;
+                                          rdfs:subClassOf mto:Elongation .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/PercentageInitialPlasticElongation
+mto:PercentageInitialPlasticElongation rdf:type owl:Class ;
+                                       rdfs:subClassOf mto:Elongation .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/PlaneStrainFractureToughness
+mto:PlaneStrainFractureToughness rdf:type owl:Class ;
+                                 rdfs:subClassOf mto:FractureToughness .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/PlaneStrainIndentationModulus
+mto:PlaneStrainIndentationModulus rdf:type owl:Class ;
+                                  rdfs:subClassOf mto:IndentationModulus .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/PlasticElongationTime
+mto:PlasticElongationTime rdf:type owl:Class ;
+                          rdfs:subClassOf mto:CreepRuptureTime .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ProportionalLimit
+mto:ProportionalLimit rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:Stress .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ReductionOfArea
+mto:ReductionOfArea rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:Deformation .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ReferenceBlock
+mto:ReferenceBlock rdf:type owl:Class ;
+                   rdfs:subClassOf mto:CalibrationAccessory .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Resolution
+mto:Resolution rdf:type owl:Class ;
+               rdfs:subClassOf bfo:Quality .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/RockwellHardness
+mto:RockwellHardness rdf:type owl:Class ;
+                     rdfs:subClassOf cco:Hardness .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/RockwellHardnessTest
+mto:RockwellHardnessTest rdf:type owl:Class ;
+                         rdfs:subClassOf mto:HardnessTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/SNCurve
+mto:SNCurve rdf:type owl:Class ;
+            rdfs:subClassOf mseo:ImageMetadataSet .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ShearFracture
+mto:ShearFracture rdf:type owl:Class ;
+                  rdfs:subClassOf mto:Fracture .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/StainAmplitude
+mto:StainAmplitude rdf:type owl:Class ;
+                   rdfs:subClassOf cco:Amplitude .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/StressAmplitude
+mto:StressAmplitude rdf:type owl:Class ;
+                    rdfs:subClassOf cco:Amplitude .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/StressRelaxationTest
+mto:StressRelaxationTest rdf:type owl:Class ;
+                         rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/StressStrainCurve
+mto:StressStrainCurve rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:ImageMetadataSet .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Striker
+mto:Striker rdf:type owl:Class ;
+            rdfs:subClassOf cco:Artifact .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/TensileTest
+mto:TensileTest rdf:type owl:Class ;
+                rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/TestForceApplicationTime
+mto:TestForceApplicationTime rdf:type owl:Class ;
+                             rdfs:subClassOf mseo:ExperimentTime .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/TestForceDuration
+mto:TestForceDuration rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:ExperimentTime .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/TestPieceSupport
+mto:TestPieceSupport rdf:type owl:Class ;
+                     rdfs:subClassOf cco:Artifact .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ThermalStrain
+mto:ThermalStrain rdf:type owl:Class ;
+                  rdfs:subClassOf mseo:Strain .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/ThermoMechanicalFatigueTest
+mto:ThermoMechanicalFatigueTest rdf:type owl:Class ;
+                                rdfs:subClassOf mto:FatigueTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/TorsionTest
+mto:TorsionTest rdf:type owl:Class ;
+                rdfs:subClassOf mto:MechanicalTesting .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/Toughness
+mto:Toughness rdf:type owl:Class ;
+              rdfs:subClassOf bfo:Quality .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/TransitionCurve
+mto:TransitionCurve rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:ImageMetadataSet .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/TransitionTemperature
+mto:TransitionTemperature rdf:type owl:Class ;
+                          rdfs:subClassOf cco:Temperature .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/TransverseStrain
+mto:TransverseStrain rdf:type owl:Class ;
+                     rdfs:subClassOf mseo:Strain .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/TrueStress
+mto:TrueStress rdf:type owl:Class ;
+               rdfs:subClassOf mseo:Stress .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/UNotch
+mto:UNotch rdf:type owl:Class ;
+           rdfs:subClassOf mto:Notch .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/UncertaintyOfMeasurement
+mto:UncertaintyOfMeasurement rdf:type owl:Class ;
+                             rdfs:subClassOf cco:Amount .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/VNotch
+mto:VNotch rdf:type owl:Class ;
+           rdfs:subClassOf mto:Notch .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/VickersHardness
+mto:VickersHardness rdf:type owl:Class ;
+                    rdfs:subClassOf cco:Hardness .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/VickersHardnessTest
+mto:VickersHardnessTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:HardnessTest .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/VickersHardnessTestEquipment
+mto:VickersHardnessTestEquipment rdf:type owl:Class ;
+                                 rdfs:subClassOf mseo:Equipment .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/-/raw/main/MTO.ttl/WohlerCurve
+mto:WohlerCurve rdf:type owl:Class ;
+                rdfs:subClassOf mseo:ImageMetadataSet .
+
+
+###  https://purl.matolab.org/mseo/mid/ActOfAnalysing
+mseo:ActOfAnalysing rdf:type owl:Class ;
+                    rdfs:subClassOf cco:ActOfMotion .
+
+
+###  https://purl.matolab.org/mseo/mid/AnalysedDataSet
+mseo:AnalysedDataSet rdf:type owl:Class ;
+                     rdfs:subClassOf mseo:ProcessDataSet .
+
+
+###  https://purl.matolab.org/mseo/mid/BreakingStrength
+mseo:BreakingStrength rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://purl.matolab.org/mseo/mid/CrossSection
+mseo:CrossSection rdf:type owl:Class ;
+                  rdfs:subClassOf bfo:TwoDimensionalSpatialRegion .
+
+
+###  https://purl.matolab.org/mseo/mid/DataSet
+mseo:DataSet rdf:type owl:Class ;
+             rdfs:subClassOf cco:InformationContentEntity .
+
+
+###  https://purl.matolab.org/mseo/mid/Deformation
+mseo:Deformation rdf:type owl:Class ;
+                 rdfs:subClassOf bfo:Disposition .
+
+
+###  https://purl.matolab.org/mseo/mid/ElasticModulus
+mseo:ElasticModulus rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:Stiffness .
+
+
+###  https://purl.matolab.org/mseo/mid/ElasticStrain
+mseo:ElasticStrain rdf:type owl:Class ;
+                   rdfs:subClassOf mseo:Strain .
+
+
+###  https://purl.matolab.org/mseo/mid/EngineeringStrain
+mseo:EngineeringStrain rdf:type owl:Class ;
+                       rdfs:subClassOf mseo:Strain .
+
+
+###  https://purl.matolab.org/mseo/mid/EngineeringStress
+mseo:EngineeringStress rdf:type owl:Class ;
+                       rdfs:subClassOf mseo:Stress .
+
+
+###  https://purl.matolab.org/mseo/mid/Equipment
+mseo:Equipment rdf:type owl:Class ;
+               rdfs:subClassOf cco:Artifact .
+
+
+###  https://purl.matolab.org/mseo/mid/Experiment
+mseo:Experiment rdf:type owl:Class ;
+                rdfs:subClassOf cco:IntentionalAct .
+
+
+###  https://purl.matolab.org/mseo/mid/ExperimentTime
+mseo:ExperimentTime rdf:type owl:Class ;
+                    rdfs:subClassOf bfo:OneDimensionalTemporalRegion .
+
+
+###  https://purl.matolab.org/mseo/mid/File
+mseo:File rdf:type owl:Class ;
+          rdfs:subClassOf cco:InformationBearingArtifact .
+
+
+###  https://purl.matolab.org/mseo/mid/ImageMetadataSet
+mseo:ImageMetadataSet rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:DataSet .
+
+
+###  https://purl.matolab.org/mseo/mid/LowerYieldStrenght
+mseo:LowerYieldStrenght rdf:type owl:Class ;
+                        rdfs:subClassOf mseo:YieldStrenght .
+
+
+###  https://purl.matolab.org/mseo/mid/MeasurementRegion
+mseo:MeasurementRegion rdf:type owl:Class ;
+                       rdfs:subClassOf bfo:ThreeDimensionalSpatialRegion .
+
+
+###  https://purl.matolab.org/mseo/mid/MechanicalStrength
+mseo:MechanicalStrength rdf:type owl:Class ;
+                        rdfs:subClassOf cco:Strength .
+
+
+###  https://purl.matolab.org/mseo/mid/Number
+mseo:Number rdf:type owl:Class ;
+            rdfs:subClassOf cco:Amount .
+
+
+###  https://purl.matolab.org/mseo/mid/PlasticStrain
+mseo:PlasticStrain rdf:type owl:Class ;
+                   rdfs:subClassOf mseo:Strain .
+
+
+###  https://purl.matolab.org/mseo/mid/PoissonEffect
+mseo:PoissonEffect rdf:type owl:Class ;
+                   rdfs:subClassOf bfo:RealizableEntity .
+
+
+###  https://purl.matolab.org/mseo/mid/PoissonRatio
+mseo:PoissonRatio rdf:type owl:Class ;
+                  rdfs:subClassOf mseo:PoissonEffect .
+
+
+###  https://purl.matolab.org/mseo/mid/ProcessDataSet
+mseo:ProcessDataSet rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:DataSet .
+
+
+###  https://purl.matolab.org/mseo/mid/ProofStrength
+mseo:ProofStrength rdf:type owl:Class ;
+                   rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://purl.matolab.org/mseo/mid/RawDataSet
+mseo:RawDataSet rdf:type owl:Class ;
+                rdfs:subClassOf mseo:ProcessDataSet .
+
+
+###  https://purl.matolab.org/mseo/mid/Regulation
+mseo:Regulation rdf:type owl:Class ;
+                rdfs:subClassOf cco:PlanSpecification .
+
+
+###  https://purl.matolab.org/mseo/mid/Specimen
+mseo:Specimen rdf:type owl:Class ;
+              rdfs:subClassOf cco:Artifact .
+
+
+###  https://purl.matolab.org/mseo/mid/Stiffness
+mseo:Stiffness rdf:type owl:Class ;
+               rdfs:subClassOf cco:Strength .
+
+
+###  https://purl.matolab.org/mseo/mid/Strain
+mseo:Strain rdf:type owl:Class ;
+            rdfs:subClassOf mseo:Deformation .
+
+
+###  https://purl.matolab.org/mseo/mid/Stress
+mseo:Stress rdf:type owl:Class ;
+            rdfs:subClassOf cco:Strength .
+
+
+###  https://purl.matolab.org/mseo/mid/TimeOfBreack
+mseo:TimeOfBreack rdf:type owl:Class ;
+                  rdfs:subClassOf bfo:ZeroDimensionalTemporalRegion .
+
+
+###  https://purl.matolab.org/mseo/mid/TrueStrain
+mseo:TrueStrain rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Strain .
+
+
+###  https://purl.matolab.org/mseo/mid/UltimateTensileStrength
+mseo:UltimateTensileStrength rdf:type owl:Class ;
+                             rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://purl.matolab.org/mseo/mid/UniversalTestingMachine
+mseo:UniversalTestingMachine rdf:type owl:Class ;
+                             rdfs:subClassOf cco:Artifact .
+
+
+###  https://purl.matolab.org/mseo/mid/UpperYieldStrength
+mseo:UpperYieldStrength rdf:type owl:Class ;
+                        rdfs:subClassOf mseo:YieldStrenght .
+
+
+###  https://purl.matolab.org/mseo/mid/YieldStrenght
+mseo:YieldStrenght rdf:type owl:Class ;
+                   rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://qudt.org/2.1/schema/qudt/DerivedUnit
+qudt:DerivedUnit rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

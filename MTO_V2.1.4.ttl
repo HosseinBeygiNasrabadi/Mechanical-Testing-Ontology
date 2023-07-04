@@ -1,0 +1,1488 @@
+@prefix : <https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix iof: <https://github.com/iofoundry/Core/> .
+@prefix mto: <https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix mseo: <https://purl.matolab.org/mseo/mid/> .
+@prefix qudt: <https://qudt.org/2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/> .
+
+<https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/> rdf:type owl:Ontology ;
+                                                                            owl:imports <https://gitlab.com/kupferdigital/process-graphs/brinell-hardness-test#> ,
+                                                                                        <https://gitlab.com/kupferdigital/process-graphs/tensile-test#> ,
+                                                                                        <https://gitlab.com/kupferdigital/process-graphs/vickers-hardness-test#> ,
+                                                                                        <https://purl.matolab.org/mseo/mid> ;
+                                                                            dc:creator "Birgit Skrotzki" ,
+                                                                                       "Hossein Beygi Nasrabadi" ,
+                                                                                       "Miriam Eisenbart" ,
+                                                                                       "Thomas Hanke" ;
+                                                                            dc:title "Mechanical Testing Ontology (MTO)" ;
+                                                                            owl:versionInfo "2.1.4" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition
+<https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source
+<https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/bearer_of
+bfo:bearer_of rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/contains
+bfo:contains rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/derives_into
+bfo:derives_into rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/has_function
+bfo:has_function rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf bfo:RO_0000053 .
+
+
+###  http://purl.obolibrary.org/obo/has_part
+bfo:has_part rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/has_participant
+bfo:has_participant rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/has_quality
+bfo:has_quality rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf bfo:RO_0000053 .
+
+
+###  http://purl.obolibrary.org/obo/is_carrier_of
+bfo:is_carrier_of rdf:type owl:ObjectProperty .
+
+
+###  http://purl.obolibrary.org/obo/participates_in
+bfo:participates_in rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/affects
+cco:affects rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/caused_by
+cco:caused_by rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/described_by
+cco:described_by rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf cco:is_subject_of .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/designated_by
+cco:designated_by rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cco:is_subject_of .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_accessory
+cco:has_accessory rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_agent
+cco:has_agent rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_input
+cco:has_input rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_output
+cco:has_output rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf bfo:has_participant .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_process_part
+cco:has_process_part rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf bfo:has_part .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_cause_of
+cco:is_cause_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_input_of
+cco:is_input_of rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf bfo:participates_in .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_made_of
+cco:is_made_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_measured_by
+cco:is_measured_by rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf cco:described_by .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_subject_of
+cco:is_subject_of rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/occurs_on
+cco:occurs_on rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/process_precedes
+cco:process_precedes rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/process_started_by
+cco:process_started_by rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf cco:caused_by .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/uses
+cco:uses rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/uses_measurement_unit
+cco:uses_measurement_unit rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf bfo:is_carrier_of .
+
+
+###  https://purl.matolab.org/mseo/mid/in_accordance_with
+mseo:in_accordance_with rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf cco:described_by .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000009
+bfo:BFO_0000009 rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Act
+cco:Act rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfArtifactProcessing
+cco:ActOfArtifactProcessing rdf:type owl:Class ;
+                            rdfs:subClassOf cco:IntentionalAct .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfLocationChange
+cco:ActOfLocationChange rdf:type owl:Class ;
+                        rdfs:subClassOf cco:ActOfMotion .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMeasuring
+cco:ActOfMeasuring rdf:type owl:Class ;
+                   rdfs:subClassOf cco:IntentionalAct .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMotion
+cco:ActOfMotion rdf:type owl:Class ;
+                rdfs:subClassOf cco:IntentionalAct .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfPositionChange
+cco:ActOfPositionChange rdf:type owl:Class ;
+                        rdfs:subClassOf cco:ActOfMotion .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Algorithm
+cco:Algorithm rdf:type owl:Class ;
+              rdfs:subClassOf cco:DirectiveInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Amount
+cco:Amount rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Amplitude
+cco:Amplitude rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Artifact
+cco:Artifact rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction
+cco:ArtifactFunction rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactHistory
+cco:ArtifactHistory rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/CalendarDateIdentifier
+cco:CalendarDateIdentifier rdf:type owl:Class ;
+                           rdfs:subClassOf cco:DateIdentifier .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DateIdentifier
+cco:DateIdentifier rdf:type owl:Class ;
+                   rdfs:subClassOf cco:TemporalIntervalIdentifier .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Day
+cco:Day rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Depth
+cco:Depth rdf:type owl:Class ;
+          rdfs:subClassOf cco:OneDimensionalExtent .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity
+cco:DescriptiveInformationContentEntity rdf:type owl:Class ;
+                                        rdfs:subClassOf cco:InformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DesignativeInformationContentEntity
+cco:DesignativeInformationContentEntity rdf:type owl:Class ;
+                                        rdfs:subClassOf cco:InformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DeviationMeasurementInformationContentEntity
+cco:DeviationMeasurementInformationContentEntity rdf:type owl:Class ;
+                                                 rdfs:subClassOf cco:MeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Diameter
+cco:Diameter rdf:type owl:Class ;
+             rdfs:subClassOf cco:OneDimensionalExtent .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity
+cco:DirectiveInformationContentEntity rdf:type owl:Class ;
+                                      rdfs:subClassOf cco:InformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DistanceMeasurementInformationContentEntity
+cco:DistanceMeasurementInformationContentEntity rdf:type owl:Class ;
+                                                rdfs:subClassOf cco:RatioMeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Fatigability
+cco:Fatigability rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Force
+cco:Force rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Frequency
+cco:Frequency rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/GroupOfAgents
+cco:GroupOfAgents rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Hardness
+cco:Hardness rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact
+cco:InformationBearingArtifact rdf:type owl:Class ;
+                               rdfs:subClassOf cco:Artifact .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity
+cco:InformationContentEntity rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct
+cco:IntentionalAct rdf:type owl:Class ;
+                   rdfs:subClassOf cco:Act .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Length
+cco:Length rdf:type owl:Class ;
+           rdfs:subClassOf cco:OneDimensionalExtent .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/MeasurementInformationContentEntity
+cco:MeasurementInformationContentEntity rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/MultiSecondTemporalInterval
+cco:MultiSecondTemporalInterval rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/NonNameIdentifier
+cco:NonNameIdentifier rdf:type owl:Class ;
+                      rdfs:subClassOf cco:DesignativeInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/OneDimensionalExtent
+cco:OneDimensionalExtent rdf:type owl:Class ;
+                         rdfs:subClassOf cco:SizeQuality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Organization
+cco:Organization rdf:type owl:Class ;
+                 rdfs:subClassOf cco:GroupOfAgents .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/PlanSpecification
+cco:PlanSpecification rdf:type owl:Class ;
+                      rdfs:subClassOf cco:DirectiveInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfMaterial
+cco:PortionOfMaterial rdf:type owl:Class ;
+                      rdfs:subClassOf cco:PortionOfProcessedMaterial .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial
+cco:PortionOfProcessedMaterial rdf:type owl:Class ;
+                               rdfs:subClassOf cco:Artifact .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ProportionalRatioMeasurementInformationContentEntity
+cco:ProportionalRatioMeasurementInformationContentEntity rdf:type owl:Class ;
+                                                         rdfs:subClassOf cco:RatioMeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/RatioMeasurementInformationContentEntity
+cco:RatioMeasurementInformationContentEntity rdf:type owl:Class ;
+                                             rdfs:subClassOf cco:MeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ReliabilityMeasurementInformationContentEntity
+cco:ReliabilityMeasurementInformationContentEntity rdf:type owl:Class ;
+                                                   rdfs:subClassOf cco:MeasurementInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ShapeQuality
+cco:ShapeQuality rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/SizeQuality
+cco:SizeQuality rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/SpatialOrientation
+cco:SpatialOrientation rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Speed
+cco:Speed rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Spherical
+cco:Spherical rdf:type owl:Class ;
+              rdfs:subClassOf cco:ThreeDimensionalShape .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Strength
+cco:Strength rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Temperature
+cco:Temperature rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/TemporalIntervalIdentifier
+cco:TemporalIntervalIdentifier rdf:type owl:Class ;
+                               rdfs:subClassOf cco:TemporalRegionIdentifier .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/TemporalRegionIdentifier
+cco:TemporalRegionIdentifier rdf:type owl:Class ;
+                             rdfs:subClassOf cco:DesignativeInformationContentEntity .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Thickness
+cco:Thickness rdf:type owl:Class ;
+              rdfs:subClassOf cco:Depth .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ThreeDimensionalExtent
+cco:ThreeDimensionalExtent rdf:type owl:Class ;
+                           rdfs:subClassOf cco:SizeQuality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ThreeDimensionalShape
+cco:ThreeDimensionalShape rdf:type owl:Class ;
+                          rdfs:subClassOf cco:ShapeQuality .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/TwoDimensionalExtent
+cco:TwoDimensionalExtent rdf:type owl:Class ;
+                         rdfs:subClassOf cco:SizeQuality .
+
+
+###  https://github.com/iofoundry/Core/ManufacturingProcess
+iof:ManufacturingProcess rdf:type owl:Class ;
+                         rdfs:subClassOf iof:PlannedProcess .
+
+
+###  https://github.com/iofoundry/Core/MaterialResource
+iof:MaterialResource rdf:type owl:Class ;
+                     rdfs:subClassOf bfo:BFO_0000040 .
+
+
+###  https://github.com/iofoundry/Core/MeasurementProcess
+iof:MeasurementProcess rdf:type owl:Class ;
+                       rdfs:subClassOf iof:PlannedProcess .
+
+
+###  https://github.com/iofoundry/Core/PlannedProcess
+iof:PlannedProcess rdf:type owl:Class ;
+                   rdfs:subClassOf bfo:BFO_0000015 .
+
+
+###  https://github.com/iofoundry/Core/TransportProcess
+iof:TransportProcess rdf:type owl:Class ;
+                     rdfs:subClassOf iof:PlannedProcess .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/AbsorbedImpactEnergy
+mto:AbsorbedImpactEnergy rdf:type owl:Class ;
+                         rdfs:subClassOf mto:ImpactEnergy ;
+                         rdfs:label "Absorbed Impact Energy" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "difference between the potential energy of the striking member just prior to impact with the specimen and the energy remaining in the member following the fracture of the specimen, as given by the readout device on the machine, which has been compensated for windage and friction loss" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ActOfArtifactVerification
+mto:ActOfArtifactVerification rdf:type owl:Class ;
+                              rdfs:subClassOf cco:IntentionalAct ;
+                              rdfs:label "Act Of Artifact Verification" ;
+                              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "an Intentional Act of verifying an artifact" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ActualAbsorbedImpactEnergy
+mto:ActualAbsorbedImpactEnergy rdf:type owl:Class ;
+                               rdfs:subClassOf mto:AbsorbedImpactEnergy ;
+                               rdfs:label "Actual Absorbed Impact Energy" ;
+                               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "total energy required to break a test piece when tested by a pendulum impact-testing machine" ;
+                               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Anvil
+mto:Anvil rdf:type owl:Class ;
+          rdfs:subClassOf cco:Artifact ;
+          rdfs:label "Anvil" ;
+          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "portion of the machine that serves to properly position the test piece for impact with respect to the striker and the test-piece supports, and support the test piece under the load of the striker" ;
+          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/AxialStrain
+mto:AxialStrain rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Strain ;
+                rdfs:label "Axial Strain" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "linear strain in the direction of the applied force" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/AxialStress
+mto:AxialStress rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Stress ;
+                rdfs:label "Axial Stress" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "stress component in the direction of the applied force" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/BendingTest
+mto:BendingTest rdf:type owl:Class ;
+                rdfs:subClassOf mto:MechanicalTesting ;
+                rdfs:label "Bending Test" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test which consists in submitting a test piece to plastic deformation by bending until a specified angle of bend is reached" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/BrinellHardness
+mto:BrinellHardness rdf:type owl:Class ;
+                    rdfs:subClassOf cco:Hardness ;
+                    rdfs:label "Brinell Hardness" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "measure of a material's resistance to permanent indentation when a test force is applied through a hardmetal ball indenter" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/BrinellHardnessTest
+mto:BrinellHardnessTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:HardnessTest ;
+                        rdfs:label "Brinell Hardness Test" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "indentation hardness test, carried out using a hardmetal ball indenter, to measure the Brinell hardness of a material" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/BrinellHardnessTestEquipment
+mto:BrinellHardnessTestEquipment rdf:type owl:Class ;
+                                 rdfs:subClassOf mseo:Equipment ;
+                                 rdfs:label "Brinell Hardness Test Equipment" ;
+                                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "equipment for measuring the Brinell indentation hardness of a material" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/BrittleFracture
+mto:BrittleFracture rdf:type owl:Class ;
+                    rdfs:subClassOf mto:Fracture ;
+                    rdfs:label "Brittle Fracture" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "percentage of area of brittle fracture to total area of fracture of test piec" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CalibrationAccessory
+mto:CalibrationAccessory rdf:type owl:Class ;
+                         rdfs:subClassOf cco:Artifact ;
+                         rdfs:label "Calibration Accessory" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "the artifact that uses for calibration of a machine or device" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CharpyTest
+mto:CharpyTest rdf:type owl:Class ;
+               rdfs:subClassOf mto:ImpactTest ;
+               rdfs:label "Charpy Test" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "impact test that measures the energy absorbed from a pendulum when it strikes and fractures a test piece that is supported by two anvils" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CompressionTest
+mto:CompressionTest rdf:type owl:Class ;
+                    rdfs:subClassOf mto:MechanicalTesting ;
+                    rdfs:label "Compression Test" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test performed on a unit or component by the application of external forces of a crushing or collapsing nature" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "ISO 10254:2015(en)" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CrackExtensionResistanceCurve
+mto:CrackExtensionResistanceCurve rdf:type owl:Class ;
+                                  rdfs:subClassOf mseo:ImageMetadataSet ;
+                                  rdfs:label "Crack Extension Resistance Curve" ;
+                                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "variation in δ or J with stable crack extension, ∆ a" ;
+                                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CrackLength
+mto:CrackLength rdf:type owl:Class ;
+                rdfs:subClassOf cco:Length ;
+                rdfs:label "Crack Length" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "length of crack measured from load line to crack tip in the CT specimen, from the perpendicular bisector of the central crack to crack tips in the MT specimen, and from the specimen front face to crack tip in the bend specimen" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CreepCurve
+mto:CreepCurve rdf:type owl:Class ;
+               rdfs:subClassOf mseo:ImageMetadataSet ;
+               rdfs:label "Creep Curve" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "curve relating strain and time in a creep test" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CreepElongationTime
+mto:CreepElongationTime rdf:type owl:Class ;
+                        rdfs:subClassOf mto:CreepRuptureTime ;
+                        rdfs:label "Creep Elongation Time" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "time required for a strained test piece to obtain at the specified values of temperature, T, and initial stress, σo, a specified percentage creep elongation, x" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CreepRuptureTime
+mto:CreepRuptureTime rdf:type owl:Class ;
+                     rdfs:subClassOf bfo:BFO_0000148 ;
+                     rdfs:label "Creep Rupture Time" ;
+                     <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "time required for the test piece, maintained at the specified temperature, T, and strained by the specified tensile stress, to rupture" ;
+                     <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CreepStrength
+mto:CreepStrength rdf:type owl:Class ;
+                  rdfs:subClassOf mseo:MechanicalStrength ;
+                  rdfs:label "Creep Strength" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "stress to cause specified strain in given time during a creep test at a specified constant temperature" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CreepTest
+mto:CreepTest rdf:type owl:Class ;
+              rdfs:subClassOf mto:MechanicalTesting ;
+              rdfs:label "Creep Test" ;
+              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test to measure the change in strain as a function of time with the test piece held at constant temperature and under constant force or constant stress" ;
+              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Cycle
+mto:Cycle rdf:type owl:Class ;
+          rdfs:subClassOf bfo:BFO_0000144 ;
+          rdfs:label "Cycle" ;
+          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "smallest segment of the force-time, stress-time, strain-time, etc., function that is repeated periodically" ;
+          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CyclicStrengthCoefficient
+mto:CyclicStrengthCoefficient rdf:type owl:Class ;
+                              rdfs:subClassOf mto:FatigueStrength ;
+                              rdfs:label "Cyclic Strength Coefficient" ;
+                              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "value of stress that intercepts at εpa = 1 on a cyclic graph log(σa) as a function of log(εpa)" ;
+                              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/CyclicYieldStrength
+mto:CyclicYieldStrength rdf:type owl:Class ;
+                        rdfs:subClassOf mseo:YieldStrenght ;
+                        rdfs:label "Cyclic Yield Strength" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "0,2% offset yield strength determined on a cyclic stress-strain curve" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Diagonal
+mto:Diagonal rdf:type owl:Class ;
+             rdfs:subClassOf cco:OneDimensionalExtent ;
+             rdfs:label "Diagonal" ;
+             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "an auxiliary plane that cuts the hull in a plane perpendicular to the stations and inclined to the longitudinal centreplane of the ship" ;
+             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "ISO 10303-218:2004" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/DirectVerification
+mto:DirectVerification rdf:type owl:Class ;
+                       rdfs:subClassOf mto:ActOfArtifactVerification ;
+                       rdfs:label "Direct Verification" ;
+                       <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "process for determining whether critical components of a machine (such as the maximum error in the applied force, the measurement of indentation depth or size, the indenter geometry, and testing cycle parameters) are within specified tolerances or not" ;
+                       <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/DistanceBetweenIndentationAndEdge
+mto:DistanceBetweenIndentationAndEdge rdf:type owl:Class ;
+                                      rdfs:subClassOf cco:DistanceMeasurementInformationContentEntity ;
+                                      rdfs:label "Distance Between Indentation And Edge" ;
+                                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "a distance measurement information content entity that represents the distance between indentation trace and edge of the sample" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/DistanceBetweenIndentations
+mto:DistanceBetweenIndentations rdf:type owl:Class ;
+                                rdfs:subClassOf cco:DistanceMeasurementInformationContentEntity ;
+                                rdfs:label "Distance Between Indentations" ;
+                                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "a distance measurement information content entity that represents the distance between two indentation traces" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/DuctileFracture
+mto:DuctileFracture rdf:type owl:Class ;
+                    rdfs:subClassOf mto:Fracture ;
+                    rdfs:label "Ductile Fracture" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "percentage of area of ductile fracture to total area of fracture of test piece" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Ductility
+mto:Ductility rdf:type owl:Class ;
+              rdfs:subClassOf mto:Formability ;
+              rdfs:label "Ductility" ;
+              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "ability of a material to deform plastically without fracturing" ;
+              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ElasticLimit
+mto:ElasticLimit rdf:type owl:Class ;
+                 rdfs:subClassOf mseo:Stress ;
+                 rdfs:label "Elastic Limit" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "maximum stress that a material is capable of sustaining without any permanent strain remaining upon complete release of the stress" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Elongation
+mto:Elongation rdf:type owl:Class ;
+               rdfs:subClassOf mseo:Deformation ;
+               rdfs:label "Elongation" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "increase in the original gauge length, Lo, or reference length, Lr, at any moment during the test" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Energy
+mto:Energy rdf:type owl:Class ;
+           rdfs:subClassOf bfo:BFO_0000144 ;
+           rdfs:label "Energy" ;
+           <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "The capacity of a physical system to do work." .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Extensometer
+mto:Extensometer rdf:type owl:Class ;
+                 rdfs:subClassOf cco:Artifact ;
+                 rdfs:label "Extensometer" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "device for measuring extension and transversal dimensional changes" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/FatigueLife
+mto:FatigueLife rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Number ;
+                rdfs:label "Fatigue Life" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "number of applied cycles to achieve a defined failure criterion" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/FatigueLimit
+mto:FatigueLimit rdf:type owl:Class ;
+                 rdfs:subClassOf mto:FatigueStrength ;
+                 rdfs:label "Fatigue Limit" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "term formerly used for the value of stress amplitude below which a test specimen would be expected to endure an infinite number of stress cycles with a stated probability" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/FatigueStrength
+mto:FatigueStrength rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:MechanicalStrength ;
+                    rdfs:label "Fatigue Strength" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "value of stress level at which a specimen would fail at an indicated life" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/FatigueTest
+mto:FatigueTest rdf:type owl:Class ;
+                rdfs:subClassOf mto:MechanicalTesting ;
+                rdfs:label "Fatigue Test" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test to determine fatigue life, fatigue strength at a given life, etc., by applying repeated forces or strains, or varying forces or strains, to a test piece" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Formability
+mto:Formability rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Deformation ;
+                rdfs:label "Formability" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "algebraic ratio of the minimum force or stress to maximum force or stress in a cycle" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Fracture
+mto:Fracture rdf:type owl:Class ;
+             rdfs:subClassOf bfo:BFO_0000016 ;
+             rdfs:label "Fracture" ;
+             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "unintentional separation into two or more parts" ;
+             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "ISO 11243:2016(en)" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/FractureToughness
+mto:FractureToughness rdf:type owl:Class ;
+                      rdfs:subClassOf mto:Toughness ;
+                      rdfs:label "Fracture Toughness" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "generic term for resistance to crack extension under quasistatic, monotonic loading (i.e. crack displacement)" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/FractureToughnessTest
+mto:FractureToughnessTest rdf:type owl:Class ;
+                          rdfs:subClassOf mto:MechanicalTesting ;
+                          rdfs:label "Fracture Toughness Test" ;
+                          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test for measuring fracture toughness" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/GaugeLength
+mto:GaugeLength rdf:type owl:Class ;
+                rdfs:subClassOf cco:Length ;
+                rdfs:label "Gauge Length" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "length of the section of the test piece on which elongation is measured" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/HardnessCalibrationMachine
+mto:HardnessCalibrationMachine rdf:type owl:Class ;
+                               rdfs:subClassOf cco:Artifact ;
+                               rdfs:label "Hardness Calibration Machine" ;
+                               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "machine used for the calibration of hardness reference blocks, usually differing from a hardness testing machine by having tighter tolerances on certain parameters, such as the maximum error in the applied force, measurement of indentation depth or size, indenter geometry, and testing-cycle parameters" ;
+                               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/HardnessTest
+mto:HardnessTest rdf:type owl:Class ;
+                 rdfs:subClassOf mto:MechanicalTesting ;
+                 rdfs:label "Hardness Test" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "indentation test, carried out using a hardness testing machine, to measure the hardness of a material" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/HardnessTestMachine
+mto:HardnessTestMachine rdf:type owl:Class ;
+                        rdfs:subClassOf cco:Artifact ;
+                        rdfs:label "Hardness Tes tMachine" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "an indentation testing machine used for performing indentation hardness tests" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/HighCycleFatigueTest
+mto:HighCycleFatigueTest rdf:type owl:Class ;
+                         rdfs:subClassOf mto:FatigueTest ;
+                         rdfs:label "High Cycle Fatigue Test" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "fatigue test carried out in the region where the stress behaviour is dominant and fatigue life is relatively longer" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/HystersisLoop
+mto:HystersisLoop rdf:type owl:Class ;
+                  rdfs:subClassOf mseo:ImageMetadataSet ;
+                  rdfs:label "Hystersis Loop" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "closed curve of the stress-strain response of specimens during one cycle" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ImpactEnergy
+mto:ImpactEnergy rdf:type owl:Class ;
+                 rdfs:subClassOf mto:Energy ;
+                 rdfs:label "Impact Energy" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "energy determined by means of an impact bending test" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "ISO 7628:2010(en)" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ImpactTest
+mto:ImpactTest rdf:type owl:Class ;
+               rdfs:subClassOf mto:MechanicalTesting ;
+               rdfs:label "Impact Test" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test for evaluating toughness, often performed using a notched or precracked specimen, and typically quantified in terms of the potential energy absorbed by the test piece" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Indentation
+mto:Indentation rdf:type owl:Class ;
+                rdfs:subClassOf bfo:BFO_0000009 ;
+                rdfs:label "Indentation" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "impression made in the surface of the material by the indenter in an indentation test" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/IndentationModulus
+mto:IndentationModulus rdf:type owl:Class ;
+                       rdfs:subClassOf mseo:ElasticModulus ;
+                       rdfs:label "Indentation Modulus" ;
+                       <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "estimate of the average isotropic Young’s modulus of the test piece calculated from the plane strain indentation modulus" ;
+                       <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Indenter
+mto:Indenter rdf:type owl:Class ;
+             rdfs:subClassOf cco:Artifact ;
+             rdfs:label "Indenter" ;
+             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "body with a hard tip, typically of diamond, hardmetal (tungsten carbide alloy), or, in special cases, steel, of specified geometry through which the test force is applied in the course of an indentation test" ;
+             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/IndirectVerification
+mto:IndirectVerification rdf:type owl:Class ;
+                         rdfs:subClassOf mto:ActOfArtifactVerification ;
+                         rdfs:label "Indirec tVerification" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "process for determining the performance of a machine by means of making measurements on reference blocks" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/IzodTest
+mto:IzodTest rdf:type owl:Class ;
+             rdfs:subClassOf mto:ImpactTest ;
+             rdfs:label "Izod Test" ;
+             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "impact test that measures the energy absorbed in breaking a notched specimen, supported as a vertical cantilever beam, by a single impact of a striker, referred to the original cross-sectional area of the specimen" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/JRCurve
+mto:JRCurve rdf:type owl:Class ;
+            rdfs:subClassOf mseo:ImageMetadataSet ;
+            rdfs:label "J-R Curve" ;
+            <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "plot of J versus Δa, descriptive of stable crack-extension resistance for cases where plasticity effects are not negligible" ;
+            <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/KnoopHardness
+mto:KnoopHardness rdf:type owl:Class ;
+                  rdfs:subClassOf cco:Hardness ;
+                  rdfs:label "Knoop Hardness" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "measure of a material's resistance to permanent indentation when a test force is applied through a diamond rhombic-based pyramidal indenter" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/KnoopHardnessTest
+mto:KnoopHardnessTest rdf:type owl:Class ;
+                      rdfs:subClassOf mto:HardnessTest ;
+                      rdfs:label "Knoop Hardness Test" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "indentation hardness test, carried out using a diamond rhombic-based pyramidal indenter, to measure the Knoop hardness of a material" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/LatheralExpansion
+mto:LatheralExpansion rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:Deformation ;
+                      rdfs:label "Lathera lExpansion" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "increase in width of test piece at the final plastic hinge that forms opposite the notch just prior to the complete fracture of the test piece" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/LinearStrain
+mto:LinearStrain rdf:type owl:Class ;
+                 rdfs:subClassOf mseo:Strain ;
+                 rdfs:label "Linear Strain" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "strain component in a given linear direction" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/LowCycleFatigueTest
+mto:LowCycleFatigueTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:FatigueTest ;
+                        rdfs:label "Low Cycle Fatigue Test" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "fatigue test carried out in the region where the cyclic plastic strain behaviour is dominant and fatigue life is relatively shorter" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/MartensHardness
+mto:MartensHardness rdf:type owl:Class ;
+                    rdfs:subClassOf cco:Hardness ;
+                    rdfs:label "Martens Hardness" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "measure of a material's resistance to both permanent and recoverable indentation when an increasing test force is applied through a diamond pyramidal indenter (either square-based or triangular-based)" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/MartensHardnessTest
+mto:MartensHardnessTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:HardnessTest ;
+                        rdfs:label "Martens Hardness Test" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "indentation hardness test, carried out using aa diamond pyramidal indenter (either square-based or triangular-based), to measure the Martens hardness of a material" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/MechanicalTesting
+mto:MechanicalTesting rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:Experiment ;
+                      rdfs:label "Mechanical Testing" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "any tests for the determination of mechanical properties" ,
+                                                                                                                                "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/NanoindentationTest
+mto:NanoindentationTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:MechanicalTesting ;
+                        rdfs:label "Nanoindentation Test" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test to measure the hardness and elastic modulus of material by indentation of a surface where the indentation depth or the depth of the plastic deformation is less than 100 nm" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/NormalStress
+mto:NormalStress rdf:type owl:Class ;
+                 rdfs:subClassOf mseo:Stress ;
+                 rdfs:label "Normal Stress" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "stress component perpendicular to a given plane" ;
+                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Notch
+mto:Notch rdf:type owl:Class ;
+          rdfs:subClassOf bfo:BFO_0000009 ;
+          rdfs:label "Notch" ;
+          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "cut for the initiation of fracture" ;
+          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "ISO 19044:2016(en)" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/OpticalMeasuringSystem
+mto:OpticalMeasuringSystem rdf:type owl:Class ;
+                           rdfs:subClassOf cco:Artifact ;
+                           rdfs:label "Optical Measuring System" ;
+                           <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "system performing measurements of spatial coordinates exclusively by optical sensors" ;
+                           <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "ISO 10360-13:2021(en)" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ParallelLength
+mto:ParallelLength rdf:type owl:Class ;
+                   rdfs:subClassOf cco:Length ;
+                   rdfs:label "Parallel Length" ;
+                   <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "parallel length of the reduced section of the test piece" ;
+                   <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/PercentageCreepElongation
+mto:PercentageCreepElongation rdf:type owl:Class ;
+                              rdfs:subClassOf mto:Elongation ;
+                              rdfs:label "Percentage Creep Elongation" ;
+                              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "increase in reference length at time t, ΔLrt, at a specified temperature, expressed as a percentage of the original reference length, Lro" ;
+                              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/PercentageElongation
+mto:PercentageElongation rdf:type owl:Class ;
+                         rdfs:subClassOf mto:Elongation ;
+                         rdfs:label "Percentage Elongation" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "elongation, expressed as a percentage of the original gauge length or reference length" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/PercentageElongationAfterCreepRepture
+mto:PercentageElongationAfterCreepRepture rdf:type owl:Class ;
+                                          rdfs:subClassOf mto:Elongation ;
+                                          rdfs:label "Percentage Elongation After Creep Repture" ;
+                                          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "permanent increase of the original reference length, Lro, after rupture (Lru − Lro), expressed as a percentage of the original reference length, Lro" ;
+                                          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/PercentageInitialPlasticElongation
+mto:PercentageInitialPlasticElongation rdf:type owl:Class ;
+                                       rdfs:subClassOf mto:Elongation ;
+                                       rdfs:label "Percentage Initial Plastic Elongation" ;
+                                       <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "non-proportional increase of the original reference length, Lro, due to the application of the test force" ;
+                                       <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/PlaneStrainFractureToughness
+mto:PlaneStrainFractureToughness rdf:type owl:Class ;
+                                 rdfs:subClassOf mto:FractureToughness ;
+                                 rdfs:label "Plane Strain Fracture Toughness" ;
+                                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "measure of a material’s resistance to crack-extension when the stress state near the crack tip is predominantly plane strain, plastic deformation is limited, and opening mode (mode I) loading is applied" ;
+                                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/PlaneStrainIndentationModulus
+mto:PlaneStrainIndentationModulus rdf:type owl:Class ;
+                                  rdfs:subClassOf mto:IndentationModulus ;
+                                  rdfs:label "Plane Strain Indentation Modulus" ;
+                                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "measure of the equivalent isotropic average plane strain elastic modulus of a material obtained by an indentation test" ;
+                                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/PlasticElongationTime
+mto:PlasticElongationTime rdf:type owl:Class ;
+                          rdfs:subClassOf mto:CreepRuptureTime ;
+                          rdfs:label "Plastic Elongation Time" ;
+                          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "time required to obtain at the specified values of temperature, T, and initial stress, σo, a specified percentage plastic elongation, x" ;
+                          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ProportionalLimit
+mto:ProportionalLimit rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:Stress ;
+                      rdfs:label "Proportional Limit" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "greatest stress which a material is capable of sustaining without any deviation from proportionality of stress to strain" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ReductionOfArea
+mto:ReductionOfArea rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:Deformation ;
+                    rdfs:label "Reduction Of Area" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "maximum change in cross-sectional area which has occurred during the test (So − Su), expressed as a percentage of the original cross-sectional area, So" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ReferenceBlock
+mto:ReferenceBlock rdf:type owl:Class ;
+                   rdfs:subClassOf mto:CalibrationAccessory ;
+                   rdfs:label "Reference Block" ;
+                   <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "reference material in block form, with a certified indentation value, primarily used for the indirect verification of indentation testing machines" ;
+                   <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Resolution
+mto:Resolution rdf:type owl:Class ;
+               rdfs:subClassOf bfo:BFO_0000019 ;
+               rdfs:label "Resolution" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "smallest difference between indications of a meter that can be meaningfully distinguished" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "ISO 12242:2012(en)" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/RockwellHardness
+mto:RockwellHardness rdf:type owl:Class ;
+                     rdfs:subClassOf cco:Hardness ;
+                     rdfs:label "Rockwell Hardness" ;
+                     <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "measure of a material's resistance to permanent indentation when a test force is applied through a hardmetal or steel ball indenter or, for certain scales, a spheroconical diamond indenter" ;
+                     <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/RockwellHardnessTest
+mto:RockwellHardnessTest rdf:type owl:Class ;
+                         rdfs:subClassOf mto:HardnessTest ;
+                         rdfs:label "Rockwell Hardness Test" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "indentation hardness test, carried out using a hardmetal or steel ball indenter or a spheroconical diamond indenter, to measure the Rockwell hardness of a material" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/SNCurve
+mto:SNCurve rdf:type owl:Class ;
+            rdfs:subClassOf mseo:ImageMetadataSet ;
+            rdfs:label "S-N Curve" ;
+            <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "curve that is the same as the Wöhler curve, or stress-life curve" ;
+            <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ShearFracture
+mto:ShearFracture rdf:type owl:Class ;
+                  rdfs:subClassOf mto:Fracture ;
+                  rdfs:label "Shear Fracture" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "surface feature of fracture characteristic of regions near the root of the notch where the fracture is initiated, and in regions of final fracture at the sides and remaining ligament of the test piece, that can be quantified on broken Charpy V-notch test pieces and used to estimate the ductility of body-centered-cubic iron-based alloys" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/StainAmplitude
+mto:StainAmplitude rdf:type owl:Class ;
+                   rdfs:subClassOf cco:Amplitude ;
+                   rdfs:label "Stain Amplitude" ;
+                   <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "one-half of the algebraic difference between the maximum strain and the minimum strain in the strain cycle" ;
+                   <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/StressAmplitude
+mto:StressAmplitude rdf:type owl:Class ;
+                    rdfs:subClassOf cco:Amplitude ;
+                    rdfs:label "Stress Amplitude" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "one-half of the algebraic difference between the maximum stress and the minimum stress in the stress cycle" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/StressRelaxationTest
+mto:StressRelaxationTest rdf:type owl:Class ;
+                         rdfs:subClassOf mto:MechanicalTesting ;
+                         rdfs:label "Stress Relaxation Test" ;
+                         <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test that measures the time-dependent decrease in stress at a constant strain" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/StressStrainCurve
+mto:StressStrainCurve rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:ImageMetadataSet .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Striker
+mto:Striker rdf:type owl:Class ;
+            rdfs:subClassOf cco:Artifact ;
+            rdfs:label "Striker" ;
+            <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "portion of the pendulum that contacts the test piece" ;
+            <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/TensileTest
+mto:TensileTest rdf:type owl:Class ;
+                rdfs:subClassOf mto:MechanicalTesting ;
+                rdfs:label "Tensile Test" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test that involves straining a test piece by tensile force, generally to fracture, for the purpose of determining one or more of the tensile properties" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/TestForceApplicationTime
+mto:TestForceApplicationTime rdf:type owl:Class ;
+                             rdfs:subClassOf mseo:ExperimentTime ;
+                             rdfs:label "Test Force Application Time" ;
+                             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "period from the start of application of force to the material until the test force is reached" ;
+                             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/TestForceDuration
+mto:TestForceDuration rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:ExperimentTime ;
+                      rdfs:label "Test Force Duration" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "period during which the test force is held constant during a hardness test, beginning when the test force is fully applied and ending either at the start of its removal or at the start of the application of an additional force" ;
+                      <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/TestPieceSupport
+mto:TestPieceSupport rdf:type owl:Class ;
+                     rdfs:subClassOf cco:Artifact ;
+                     rdfs:label "Test Piece Support" ;
+                     <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "portion of the machine that serves to properly position the test piece for impact, with respect to the center of impact of the pendulum, the striker and the anvils" ;
+                     <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ThermalStrain
+mto:ThermalStrain rdf:type owl:Class ;
+                  rdfs:subClassOf mseo:Strain ;
+                  rdfs:label "Thermal Strain" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "strain corresponding to the free expansion induced by a change in temperature" ;
+                  <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/ThermoMechanicalFatigueTest
+mto:ThermoMechanicalFatigueTest rdf:type owl:Class ;
+                                rdfs:subClassOf mto:FatigueTest ;
+                                rdfs:label "Thermo Mechanical Fatigue Test" ;
+                                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "fatigue test under the conditions where cyclic, theoretically uniform temperatures within the test section and strain fields are externally imposed, simultaneously varied and controlled" ;
+                                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/TorsionTest
+mto:TorsionTest rdf:type owl:Class ;
+                rdfs:subClassOf mto:MechanicalTesting ;
+                rdfs:label "Torsion Test" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "test which consists of twisting a test piece of wire around its own axis in one direction" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/Toughness
+mto:Toughness rdf:type owl:Class ;
+              rdfs:subClassOf bfo:BFO_0000019 ;
+              rdfs:label "Toughness" ;
+              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "energy absorbed by the specimen equivalent to the area under the load-deflection curve between the load and a specified net deflection" ;
+              <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "ISO 21022:2018(en)" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/TransitionCurve
+mto:TransitionCurve rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:ImageMetadataSet ;
+                    rdfs:label "Transition Curve" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "curve showing the relationship between test temperature and absorbed energy (or percent shear fracture or lateral expansion) over the temperature range that the material undergoes a transformation from ductile to brittle fracture behaviour" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/TransitionTemperature
+mto:TransitionTemperature rdf:type owl:Class ;
+                          rdfs:subClassOf cco:Temperature ;
+                          rdfs:label "Transition Temperature" ;
+                          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "temperature corresponding to the phenomenon in which absorbed energy decreases (or increases) abruptly, and the fracture mode changes from ductile to brittle" ;
+                          <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/TransverseStrain
+mto:TransverseStrain rdf:type owl:Class ;
+                     rdfs:subClassOf mseo:Strain ;
+                     rdfs:label "Transverse Strain" ;
+                     <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "linear strain perpendicular to the applied force" ;
+                     <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/TrueStress
+mto:TrueStress rdf:type owl:Class ;
+               rdfs:subClassOf mseo:Stress ;
+               rdfs:label "True Stress" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "axial stress calculated on the basis of the instantaneous cross-sectional area" ;
+               <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/UNotch
+mto:UNotch rdf:type owl:Class ;
+           rdfs:subClassOf mto:Notch ;
+           rdfs:label "U Notch" ;
+           <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "notch with a U-shaped cross-section and a specified depth and root radius" ;
+           <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/UncertaintyOfMeasurement
+mto:UncertaintyOfMeasurement rdf:type owl:Class ;
+                             rdfs:subClassOf cco:Amount ;
+                             rdfs:label "Uncertainty O fMeasurement" ;
+                             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand" ;
+                             <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/VNotch
+mto:VNotch rdf:type owl:Class ;
+           rdfs:subClassOf mto:Notch ;
+           rdfs:label "V Notch" ;
+           <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "notch with a V-shaped" ;
+           <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/VickersHardness
+mto:VickersHardness rdf:type owl:Class ;
+                    rdfs:subClassOf cco:Hardness ;
+                    rdfs:label "Vickers Hardness" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "measure of a material's resistance to permanent indentation when a test force is applied through a diamond square-based pyramidal indenter" ;
+                    <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/VickersHardnessTest
+mto:VickersHardnessTest rdf:type owl:Class ;
+                        rdfs:subClassOf mto:HardnessTest ;
+                        rdfs:label "Vickers Hardness Test" ;
+                        <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "indentation hardness test, carried out using a diamond square-based pyramidal indenter, to measure the Vickers hardness of a material" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/VickersHardnessTestEquipment
+mto:VickersHardnessTestEquipment rdf:type owl:Class ;
+                                 rdfs:subClassOf mseo:Equipment ;
+                                 rdfs:label "Vickers Hardness Test Equipment" ;
+                                 <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "equipment for measuring the Vickers indentation hardness of a material" .
+
+
+###  https://gitlab.com/kupferdigital/ontologies/Mechanical_Testing_Ontology/WohlerCurve
+mto:WohlerCurve rdf:type owl:Class ;
+                rdfs:subClassOf mseo:ImageMetadataSet ;
+                rdfs:label "Wohler Curve" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition> "curve expressing the relation between stress and fatigue life" ;
+                <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition_source> "https://www.iso.org/obp/ui/#iso:std:iso:23718:ed-1:v1:en" .
+
+
+###  https://purl.matolab.org/mseo/mid/ActOfAnalysing
+mseo:ActOfAnalysing rdf:type owl:Class ;
+                    rdfs:subClassOf cco:ActOfMotion .
+
+
+###  https://purl.matolab.org/mseo/mid/AnalysedDataSet
+mseo:AnalysedDataSet rdf:type owl:Class ;
+                     rdfs:subClassOf mseo:ProcessDataSet .
+
+
+###  https://purl.matolab.org/mseo/mid/BreakingStrength
+mseo:BreakingStrength rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://purl.matolab.org/mseo/mid/CrossSection
+mseo:CrossSection rdf:type owl:Class .
+
+
+###  https://purl.matolab.org/mseo/mid/DataSet
+mseo:DataSet rdf:type owl:Class ;
+             rdfs:subClassOf cco:InformationContentEntity .
+
+
+###  https://purl.matolab.org/mseo/mid/Deformation
+mseo:Deformation rdf:type owl:Class .
+
+
+###  https://purl.matolab.org/mseo/mid/ElasticModulus
+mseo:ElasticModulus rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:Stiffness .
+
+
+###  https://purl.matolab.org/mseo/mid/ElasticStrain
+mseo:ElasticStrain rdf:type owl:Class ;
+                   rdfs:subClassOf mseo:Strain .
+
+
+###  https://purl.matolab.org/mseo/mid/EngineeringStrain
+mseo:EngineeringStrain rdf:type owl:Class ;
+                       rdfs:subClassOf mseo:Strain .
+
+
+###  https://purl.matolab.org/mseo/mid/EngineeringStress
+mseo:EngineeringStress rdf:type owl:Class ;
+                       rdfs:subClassOf mseo:Stress .
+
+
+###  https://purl.matolab.org/mseo/mid/Equipment
+mseo:Equipment rdf:type owl:Class ;
+               rdfs:subClassOf cco:Artifact .
+
+
+###  https://purl.matolab.org/mseo/mid/Experiment
+mseo:Experiment rdf:type owl:Class ;
+                rdfs:subClassOf cco:IntentionalAct .
+
+
+###  https://purl.matolab.org/mseo/mid/ExperimentTime
+mseo:ExperimentTime rdf:type owl:Class .
+
+
+###  https://purl.matolab.org/mseo/mid/File
+mseo:File rdf:type owl:Class ;
+          rdfs:subClassOf cco:InformationBearingArtifact .
+
+
+###  https://purl.matolab.org/mseo/mid/ImageMetadataSet
+mseo:ImageMetadataSet rdf:type owl:Class ;
+                      rdfs:subClassOf mseo:DataSet .
+
+
+###  https://purl.matolab.org/mseo/mid/LowerYieldStrenght
+mseo:LowerYieldStrenght rdf:type owl:Class ;
+                        rdfs:subClassOf mseo:YieldStrenght .
+
+
+###  https://purl.matolab.org/mseo/mid/MeasurementRegion
+mseo:MeasurementRegion rdf:type owl:Class .
+
+
+###  https://purl.matolab.org/mseo/mid/MechanicalStrength
+mseo:MechanicalStrength rdf:type owl:Class ;
+                        rdfs:subClassOf cco:Strength .
+
+
+###  https://purl.matolab.org/mseo/mid/Number
+mseo:Number rdf:type owl:Class ;
+            rdfs:subClassOf cco:Amount .
+
+
+###  https://purl.matolab.org/mseo/mid/PlasticStrain
+mseo:PlasticStrain rdf:type owl:Class ;
+                   rdfs:subClassOf mseo:Strain .
+
+
+###  https://purl.matolab.org/mseo/mid/PoissonEffect
+mseo:PoissonEffect rdf:type owl:Class .
+
+
+###  https://purl.matolab.org/mseo/mid/PoissonRatio
+mseo:PoissonRatio rdf:type owl:Class ;
+                  rdfs:subClassOf mseo:PoissonEffect .
+
+
+###  https://purl.matolab.org/mseo/mid/ProcessDataSet
+mseo:ProcessDataSet rdf:type owl:Class ;
+                    rdfs:subClassOf mseo:DataSet .
+
+
+###  https://purl.matolab.org/mseo/mid/ProofStrength
+mseo:ProofStrength rdf:type owl:Class ;
+                   rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://purl.matolab.org/mseo/mid/RawDataSet
+mseo:RawDataSet rdf:type owl:Class ;
+                rdfs:subClassOf mseo:ProcessDataSet .
+
+
+###  https://purl.matolab.org/mseo/mid/Regulation
+mseo:Regulation rdf:type owl:Class ;
+                rdfs:subClassOf cco:PlanSpecification .
+
+
+###  https://purl.matolab.org/mseo/mid/Specimen
+mseo:Specimen rdf:type owl:Class ;
+              rdfs:subClassOf cco:Artifact .
+
+
+###  https://purl.matolab.org/mseo/mid/Stiffness
+mseo:Stiffness rdf:type owl:Class ;
+               rdfs:subClassOf cco:Strength .
+
+
+###  https://purl.matolab.org/mseo/mid/Strain
+mseo:Strain rdf:type owl:Class ;
+            rdfs:subClassOf mseo:Deformation .
+
+
+###  https://purl.matolab.org/mseo/mid/Stress
+mseo:Stress rdf:type owl:Class .
+
+
+###  https://purl.matolab.org/mseo/mid/TrueStrain
+mseo:TrueStrain rdf:type owl:Class ;
+                rdfs:subClassOf mseo:Strain .
+
+
+###  https://purl.matolab.org/mseo/mid/UltimateTensileStrength
+mseo:UltimateTensileStrength rdf:type owl:Class ;
+                             rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://purl.matolab.org/mseo/mid/UniversalTestingMachine
+mseo:UniversalTestingMachine rdf:type owl:Class ;
+                             rdfs:subClassOf cco:Artifact .
+
+
+###  https://purl.matolab.org/mseo/mid/UpperYieldStrength
+mseo:UpperYieldStrength rdf:type owl:Class ;
+                        rdfs:subClassOf mseo:YieldStrenght .
+
+
+###  https://purl.matolab.org/mseo/mid/YieldStrenght
+mseo:YieldStrenght rdf:type owl:Class ;
+                   rdfs:subClassOf mseo:MechanicalStrength .
+
+
+###  https://qudt.org/2.1/schema/qudt/DerivedUnit
+qudt:DerivedUnit rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

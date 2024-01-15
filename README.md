@@ -1,6 +1,14 @@
 # Mechanical Testing Ontology
 
+The materials mechanical testing ontology (MTO) was developed by collecting the mechanical testing vocabulary from ISO 23718 standard, as well as the standardized testing processes described for various mechanical testing of materials like tensile testing, Brinell hardness test, Vickers hardness test, stress relaxation test, and fatigue testing.
 
+Versions info:
+
+V2 developed using BFO+CCO top-level ontologies.
+
+V3 developed using PROVO+PMDco top-level ontologies.
+
+V4 developed using BFO+IOF top-level ontologies.
 
 ## Getting started
 

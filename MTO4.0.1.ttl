@@ -1,0 +1,822 @@
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iof: <https://spec.industrialontologies.org/ontology/core/Core/> .
+@prefix mseo: <https://github.com/Mat-O-Lab/MSEO/raw/main/domain/util/readable_bfo_iris.ttl/> .
+@prefix mto: <https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+bfo:BFO_0000034 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 .
+
+bfo:BFO_0000182 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000015 .
+
+bfo:BFO_0000202 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000038 .
+
+mseo:ActOfAnalysing a owl:Class ;
+    rdfs:subClassOf iof:PlannedProcess .
+
+mseo:ChemicalEntity a owl:Class ;
+    rdfs:subClassOf mseo:MatterObject .
+
+mseo:CreepResistance a owl:Class ;
+    rdfs:subClassOf mseo:Durability .
+
+mseo:CrossSection a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000009 .
+
+mseo:Ductility a owl:Class ;
+    rdfs:subClassOf iof:Capability .
+
+mseo:ElasticStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mseo:EngineeringStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mseo:EngineeringStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress .
+
+mseo:FatigueStrength a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mseo:LowerYieldStrenght a owl:Class ;
+    rdfs:subClassOf mseo:YieldStrenght .
+
+mseo:MaterialComposition a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mseo:MaterialDefect a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000029 .
+
+mseo:MeasurementRegion a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000028 .
+
+mseo:PlasticStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mseo:PoissonRatio a owl:Class ;
+    rdfs:subClassOf mseo:PoissonEffect .
+
+mseo:ProofStrength a owl:Class ;
+    rdfs:subClassOf mseo:MechanicalStrength .
+
+mseo:ReboundHardness a owl:Class ;
+    rdfs:subClassOf iof:Hardness .
+
+mseo:RegionOfInterest a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000029 .
+
+mseo:Regulation a owl:Class ;
+    rdfs:subClassOf iof:PlanSpecification .
+
+mseo:ScratchHardness a owl:Class ;
+    rdfs:subClassOf iof:Hardness .
+
+mseo:Software a owl:Class ;
+    rdfs:subClassOf iof:MaterialArtifact .
+
+mseo:Specimen a owl:Class ;
+    rdfs:subClassOf iof:MaterialArtifact .
+
+mseo:TensileStrength a owl:Class ;
+    rdfs:subClassOf mseo:BreakingStrength .
+
+mseo:TimeOfBreack a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000148 .
+
+mseo:TrueStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mseo:UniversalTestingMachine a owl:Class ;
+    rdfs:subClassOf iof:MaterialArtifact .
+
+mseo:UpperYieldStrength a owl:Class ;
+    rdfs:subClassOf mseo:YieldStrenght .
+
+mseo:WearResistance a owl:Class ;
+    rdfs:subClassOf mseo:Durability .
+
+mto: a owl:Ontology ;
+    dcterms:biblographicCitation "Hossein Beygi Nasrabadi, Thomas Hanke, Miriam Eisenbart, Birgit Skrotzki. (2024.01.15) Mechanical Testing Ontology (MTO). Version 4.0.1, www.gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology" ;
+    dcterms:created "2024.01.15" ;
+    dcterms:creator "Birgit Skrotzki",
+        "Hossein Beygi Nasrabadi (www.orcid.org/0000-0002-3092-0532)",
+        "Miriam Eisenbart",
+        "Thomas hanke" ;
+    dcterms:licence "www.creativecommons.org/licenses/by/4.0/" ;
+    dcterms:title "Mechanical Testing Ontology (MTO)" ;
+    rdfs:comment "KuferDigital project (www.materialdigital.de/project/1)",
+        "The materials mechanical testing ontology (MTO) was developed by collecting the mechanical testing vocabulary from ISO 23718 standard, as well as the standardized testing processes described for various mechanical testing of materials like tensile testing, Brinell hardness test, Vickers hardness test, stress relaxation test, and fatigue testing." ;
+    owl:imports "https://raw.githubusercontent.com/iofoundry/ontology/master/core/Core.rdf" ;
+    owl:versionInfo "4.0.1 (BFO, IOF, MSEO)" .
+
+mto:ActualAbsorbedImpactEnergy a owl:Class ;
+    rdfs:subClassOf mto:AbsorbedImpactEnergy .
+
+mto:AnalysedDataSet a owl:Class ;
+    rdfs:subClassOf mto:ProcessDataSet .
+
+mto:Anvil a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:Area a owl:Class ;
+    rdfs:subClassOf mto:TwoDimensionalExtent .
+
+mto:Atmosphere a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000017 .
+
+mto:AxialStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mto:AxialStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress .
+
+mto:BendingTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:BrinellHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness .
+
+mto:BrinellHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest .
+
+mto:BrinellHardnessTestEquipment a owl:Class ;
+    rdfs:subClassOf mto:HardnessMeasurementDevice .
+
+mto:BrittleFracture a owl:Class ;
+    rdfs:subClassOf mto:Fracture .
+
+mto:CharpyTest a owl:Class ;
+    rdfs:subClassOf mto:ImpactTest .
+
+mto:CompressionTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:CrackExtensionResistanceCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet .
+
+mto:CrackLength a owl:Class ;
+    rdfs:subClassOf mto:Length .
+
+mto:CreepCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet .
+
+mto:CreepElongationTime a owl:Class ;
+    rdfs:subClassOf mto:CreepRuptureTime .
+
+mto:CreepStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mto:CreepStrength a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mto:CreepTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:CrossSectionArea a owl:Class ;
+    rdfs:subClassOf mto:TwoDimensionalExtent .
+
+mto:Cycle a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+mto:CycleNumber a owl:Class ;
+    rdfs:subClassOf mto:Number .
+
+mto:CyclicStrainHardeningExponent a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue .
+
+mto:CyclicStrengthCoefficient a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue .
+
+mto:CyclicYieldStrength a owl:Class ;
+    rdfs:subClassOf mseo:YieldStrenght .
+
+mto:DataAcquisitionDevice a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:Diagonal a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent .
+
+mto:Diameter a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent .
+
+mto:DirectVerification a owl:Class ;
+    rdfs:subClassOf mto:ActOfArtifactVerification .
+
+mto:Displacement a owl:Class ;
+    rdfs:subClassOf mseo:Deformation .
+
+mto:DuctileFracture a owl:Class ;
+    rdfs:subClassOf mto:Fracture .
+
+mto:ElasticLimit a owl:Class ;
+    rdfs:subClassOf mseo:Stress .
+
+mto:ElectroMechanicalActuator a owl:Class ;
+    rdfs:subClassOf mto:Actuator .
+
+mto:Extensometer a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice .
+
+mto:FatigueDuctilityCoefficient a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue .
+
+mto:FatigueDuctilityExponent a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue .
+
+mto:FatigueLife a owl:Class ;
+    rdfs:subClassOf mto:Number .
+
+mto:FatigueMeasurementDevice a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice .
+
+mto:FatigueStrengthCoefficient a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue .
+
+mto:FatigueStrengthExponent a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue .
+
+mto:ForceCapicity a owl:Class ;
+    rdfs:subClassOf mto:Force .
+
+mto:ForceControlledFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest .
+
+mto:ForceTransducer a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:FractureToughnessTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:Frequency a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+mto:Furnace a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:GaugeLength a owl:Class ;
+    rdfs:subClassOf mto:Length .
+
+mto:GrippingDevice a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:HardnessCalibrationMachine a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:HeatTreatmentProcess a owl:Class ;
+    rdfs:subClassOf iof:ManufacturingProcess .
+
+mto:HighCycleFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest .
+
+mto:Humidity a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000017 .
+
+mto:HydraulicActuator a owl:Class ;
+    rdfs:subClassOf mto:Actuator .
+
+mto:Indentation a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000009 .
+
+mto:Indenter a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:IndirectVerification a owl:Class ;
+    rdfs:subClassOf mto:ActOfArtifactVerification .
+
+mto:IzodTest a owl:Class ;
+    rdfs:subClassOf mto:ImpactTest .
+
+mto:JRCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet .
+
+mto:KnoopHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness .
+
+mto:KnoopHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest .
+
+mto:LatheralExpansion a owl:Class ;
+    rdfs:subClassOf mseo:Deformation .
+
+mto:LinearStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mto:LowCycleFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest .
+
+mto:MartensHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness .
+
+mto:MartensHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest .
+
+mto:Maximum a owl:Class ;
+    rdfs:subClassOf mto:Extremum .
+
+mto:MaximumForce a owl:Class ;
+    rdfs:subClassOf mto:Force .
+
+mto:Mean a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000145 .
+
+mto:Minimum a owl:Class ;
+    rdfs:subClassOf mto:Extremum .
+
+mto:NanoindentationTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:NormalStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress .
+
+mto:OpticalMeasuringSystem a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice .
+
+mto:ParallelLength a owl:Class ;
+    rdfs:subClassOf mto:Length .
+
+mto:PeakStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress .
+
+mto:PercentageCreepElongation a owl:Class ;
+    rdfs:subClassOf mto:Elongation .
+
+mto:PercentageElongation a owl:Class ;
+    rdfs:subClassOf mto:Elongation .
+
+mto:PercentageElongationAfterCreepRepture a owl:Class ;
+    rdfs:subClassOf mto:Elongation .
+
+mto:PercentageInitialPlasticElongation a owl:Class ;
+    rdfs:subClassOf mto:Elongation .
+
+mto:PlaneStrainFractureToughness a owl:Class ;
+    rdfs:subClassOf mto:FractureToughness .
+
+mto:PlaneStrainIndentationModulus a owl:Class ;
+    rdfs:subClassOf mto:IndentationModulus .
+
+mto:PlasticElongationTime a owl:Class ;
+    rdfs:subClassOf mto:CreepRuptureTime .
+
+mto:ProportionalLimit a owl:Class ;
+    rdfs:subClassOf mseo:Stress .
+
+mto:RawDataSet a owl:Class ;
+    rdfs:subClassOf mto:ProcessDataSet .
+
+mto:ReductionOfArea a owl:Class ;
+    rdfs:subClassOf mseo:Deformation .
+
+mto:ReferenceBlock a owl:Class ;
+    rdfs:subClassOf mto:CalibrationAccessory .
+
+mto:ResidualStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress .
+
+mto:Resolution a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mto:RockwellHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness .
+
+mto:RockwellHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest .
+
+mto:Roughness a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mto:ShearFracture a owl:Class ;
+    rdfs:subClassOf mto:Fracture .
+
+mto:SignalPeriod a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime .
+
+mto:Speed a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+mto:Spherical a owl:Class ;
+    rdfs:subClassOf mto:ThreeDimensionalShape .
+
+mto:StainAmplitude a owl:Class ;
+    rdfs:subClassOf mto:Amplitude .
+
+mto:StrainControlledFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest .
+
+mto:StrainFatigueLifeCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet .
+
+mto:StrainRange a owl:Class ;
+    rdfs:subClassOf mto:Range .
+
+mto:StrainRate a owl:Class ;
+    rdfs:subClassOf iof:DeformationSpeed .
+
+mto:StrainRatio a owl:Class ;
+    rdfs:subClassOf mto:Ratio .
+
+mto:StressAmplitude a owl:Class ;
+    rdfs:subClassOf mto:Amplitude .
+
+mto:StressRelaxationTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:StressStrainCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet .
+
+mto:StressStrainHystersisLoopCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet .
+
+mto:Striker a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:TensileTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:TestForceApplicationTime a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime .
+
+mto:TestForceDuration a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime .
+
+mto:TestPieceSupport a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:ThermoMechanicalFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest .
+
+mto:Thermocouple a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice .
+
+mto:Thickness a owl:Class ;
+    rdfs:subClassOf mto:Depth .
+
+mto:TorsionTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:TransitionCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet .
+
+mto:TransitionRadius a owl:Class ;
+    rdfs:subClassOf mto:Radius .
+
+mto:TransitionTemperature a owl:Class ;
+    rdfs:subClassOf mto:Temperature .
+
+mto:TransverseStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mto:TrueStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress .
+
+mto:UNotch a owl:Class ;
+    rdfs:subClassOf mto:Notch .
+
+mto:UncertaintyOfMeasurement a owl:Class ;
+    rdfs:subClassOf mto:Amount .
+
+mto:VNotch a owl:Class ;
+    rdfs:subClassOf mto:Notch .
+
+mto:VickersHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness .
+
+mto:VickersHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest .
+
+mto:VickersHardnessTestEquipment a owl:Class ;
+    rdfs:subClassOf mto:HardnessMeasurementDevice .
+
+mto:WaveformDevice a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:WohlerCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet .
+
+iof:ActionSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:Agent a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000040 .
+
+iof:Agreement a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:Algorithm a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:DescriptiveInformationContentEntity a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:DesignSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:DesignativeInformationContentEntity a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:DirectiveInformationContentEntity a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:ForceRate a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+iof:Identifier a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:MaterialResource a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000040 .
+
+iof:MeasurementInformationContentEntity a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:ObjectiveSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:Organization a owl:Class ;
+    rdfs:subClassOf iof:OrganizedGroupOfAgents .
+
+iof:Person a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000030 .
+
+iof:RequirementSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:ValueExpression a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+bfo:BFO_0000027 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000040 .
+
+bfo:BFO_0000028 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000006 .
+
+bfo:BFO_0000031 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000002 .
+
+mseo:BreakingStrength a owl:Class ;
+    rdfs:subClassOf mseo:Toughness .
+
+mseo:ElasticModulus a owl:Class ;
+    rdfs:subClassOf mseo:Stiffness .
+
+mseo:Elasticity a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mseo:Experiment a owl:Class ;
+    rdfs:subClassOf iof:MeasurementProcess .
+
+mseo:MatterObject a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000030 .
+
+mseo:MechanicalStrength a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mseo:Plasticity a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mseo:PoissonEffect a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000017 .
+
+mseo:Stiffness a owl:Class ;
+    rdfs:subClassOf mseo:Elasticity .
+
+mto:AbsorbedImpactEnergy a owl:Class ;
+    rdfs:subClassOf mto:ImpactEnergy .
+
+mto:CalibrationAccessory a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:Depth a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent .
+
+mto:Energy a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+mto:FractureToughness a owl:Class ;
+    rdfs:subClassOf mseo:Toughness .
+
+mto:ImpactEnergy a owl:Class ;
+    rdfs:subClassOf mto:Energy .
+
+mto:IndentationModulus a owl:Class ;
+    rdfs:subClassOf mseo:ElasticModulus .
+
+mto:Radius a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent .
+
+mto:Range a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000145 .
+
+mto:Ratio a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000145 .
+
+mto:ShapeQuality a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mto:Temperature a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mto:ThreeDimensionalShape a owl:Class ;
+    rdfs:subClassOf mto:ShapeQuality .
+
+iof:DeformationSpeed a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+iof:GroupOfAgents a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000027 .
+
+iof:ManufacturingProcess a owl:Class ;
+    rdfs:subClassOf iof:PlannedProcess .
+
+iof:MeasurementProcess a owl:Class ;
+    rdfs:subClassOf iof:PlannedProcess .
+
+iof:OrganizedGroupOfAgents a owl:Class ;
+    rdfs:subClassOf iof:GroupOfAgents .
+
+iof:PlanSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+bfo:BFO_0000001 a owl:Class .
+
+bfo:BFO_0000004 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000002 .
+
+bfo:BFO_0000006 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000141 .
+
+bfo:BFO_0000008 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000003 .
+
+bfo:BFO_0000015 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000003 .
+
+bfo:BFO_0000020 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000002 .
+
+bfo:BFO_0000029 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000141 .
+
+bfo:BFO_0000038 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000008 .
+
+bfo:BFO_0000141 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000004 .
+
+bfo:BFO_0000148 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000008 .
+
+mseo:Durability a owl:Class ;
+    rdfs:subClassOf iof:Capability .
+
+mseo:Toughness a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mto:ActOfArtifactVerification a owl:Class ;
+    rdfs:subClassOf iof:PlannedProcess .
+
+mto:Actuator a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:Amount a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mto:Amplitude a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+mto:CreepRuptureTime a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000148 .
+
+mto:DataSet a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+mto:Extremum a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000145 .
+
+mto:Force a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+mto:HardnessMeasurementDevice a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice .
+
+mto:ImpactTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:Notch a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000009 .
+
+mto:Number a owl:Class ;
+    rdfs:subClassOf mto:Amount .
+
+mto:ProcessDataSet a owl:Class ;
+    rdfs:subClassOf mto:DataSet .
+
+mto:SizeQuality a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mto:TwoDimensionalExtent a owl:Class ;
+    rdfs:subClassOf mto:SizeQuality .
+
+bfo:BFO_0000002 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000001 .
+
+bfo:BFO_0000003 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000001 .
+
+bfo:BFO_0000009 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000006 .
+
+bfo:BFO_0000030 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000040 .
+
+mseo:YieldStrenght a owl:Class ;
+    rdfs:subClassOf mseo:Plasticity .
+
+mto:ExperimentTime a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000038 .
+
+mto:Fracture a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 .
+
+mto:Length a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent .
+
+iof:Capability a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 .
+
+iof:Hardness a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+bfo:BFO_0000017 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000020 .
+
+bfo:BFO_0000040 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000004 .
+
+bfo:BFO_0000145 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mto:Elongation a owl:Class ;
+    rdfs:subClassOf mseo:Deformation .
+
+iof:MaterialArtifact a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000030 .
+
+iof:PlannedProcess a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000015 .
+
+bfo:BFO_0000016 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000017 .
+
+mseo:Deformation a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 .
+
+mseo:IndentationHardness a owl:Class ;
+    rdfs:subClassOf iof:Hardness .
+
+mseo:MeasurementDevice a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mto:FatigueTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:HardnessTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting .
+
+mto:OneDimensionalExtent a owl:Class ;
+    rdfs:subClassOf mto:SizeQuality .
+
+mseo:MaterialFatigue a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 .
+
+mseo:Strength a owl:Class ;
+    rdfs:subClassOf iof:Capability .
+
+mseo:Strain a owl:Class ;
+    rdfs:subClassOf mseo:Deformation .
+
+mseo:Stress a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mto:ImageMetadataSet a owl:Class ;
+    rdfs:subClassOf mto:DataSet .
+
+iof:ProcessCharacteristic a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000003 .
+
+bfo:BFO_000001 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000020 .
+
+mto:MechanicalTesting a owl:Class ;
+    rdfs:subClassOf mseo:Experiment .
+
+iof:PieceOfEquipment a owl:Class ;
+    rdfs:subClassOf iof:MaterialArtifact .
+
+iof:InformationContentEntity a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000031 .
+

@@ -1,0 +1,1158 @@
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iof: <https://spec.industrialontologies.org/ontology/core/Core/> .
+@prefix mseo: <https://purl.matolab.org/mseo/mid/> .
+@prefix mto: <https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/> .
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns2: <https://w3id.org/pmd/co/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+bfo:BFO_0000034 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 .
+
+bfo:BFO_0000182 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000015 .
+
+bfo:BFO_0000202 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000038 .
+
+ns1:definition a owl:AnnotationProperty .
+
+mto: a owl:Ontology ;
+    dcterms:biblographicCitation "Hossein Beygi Nasrabadi, Thomas Hanke, Miriam Eisenbart, and Birgit Skrotzki. Mechanical Testing Ontology (MTO). 2024, www.gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology" ;
+    dcterms:created "2024.07.01" ;
+    dcterms:creator "Beygi Nasrabadi, Hossein (www.orcid.org/0000-0002-3092-0532)",
+        "Eisenbart, Miriam",
+        "Hanke, thomas",
+        "Skrotzki, Birgit" ;
+    dcterms:licence "www.creativecommons.org/licenses/by/4.0/" ;
+    dcterms:title "Mechanical Testing Ontology (MTO)" ;
+    rdfs:comment "KupferDigital project (www.materialdigital.de/project/1)",
+        "The materials mechanical testing ontology (MTO) was developed by collecting the mechanical testing vocabulary from ISO 23718 standard, as well as the standardized testing processes described for various mechanical testing of materials like tensile testing, Brinell hardness test, Vickers hardness test, stress relaxation test, and fatigue testing." ;
+    owl:imports "https://raw.githubusercontent.com/iofoundry/ontology/master/core/Core.rdf" ;
+    owl:versionInfo "4.0.2 (BFO, IOF, MSEO)" .
+
+mto:ActualAbsorbedImpactEnergy a owl:Class ;
+    rdfs:subClassOf mto:AbsorbedImpactEnergy ;
+    ns1:definition "total energy required to break a test piece when tested by a pendulum impact-testing machine" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:AnalysedDataSet a owl:Class ;
+    rdfs:subClassOf mto:ProcessDataSet ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Anvil a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "portion of the machine that serves to properly position the test piece for impact with respect to the striker and the test-piece supports, and support the test piece under the load of the striker" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Area a owl:Class ;
+    rdfs:subClassOf mto:TwoDimensionalExtent ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Atmosphere a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000017 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:AxialStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain ;
+    ns1:definition "linear strain in the direction of the applied force" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:AxialStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress ;
+    ns1:definition "stress component in the direction of the applied force" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:BendingTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test which consists in submitting a test piece to plastic deformation by bending until a specified angle of bend is reached" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:BrinellHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness ;
+    ns1:definition "measure of a material's resistance to permanent indentation when a test force is applied through a hardmetal ball indenter" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:BrinellHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns1:definition "indentation hardness test, carried out using a hardmetal ball indenter, to measure the Brinell hardness of a material" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:BrinellHardnessTestEquipment a owl:Class ;
+    rdfs:subClassOf mto:HardnessMeasurementDevice ;
+    ns1:definition "equipment for measuring the Brinell indentation hardness of a material" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:BrittleFracture a owl:Class ;
+    rdfs:subClassOf mto:Fracture ;
+    ns1:definition "percentage of area of brittle fracture to total area of fracture of test piece" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CharpyTest a owl:Class ;
+    rdfs:subClassOf mto:ImpactTest ;
+    ns1:definition "impact test that measures the energy absorbed from a pendulum when it strikes and fractures a test piece that is supported by two anvils" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CompressionTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test performed on a unit or component by the application of external forces of a crushing or collapsing nature" ;
+    ns2:definitionSource "ISO 10254:2015(en)" .
+
+mto:CrackExtensionResistanceCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet ;
+    ns1:definition "variation in δ or J with stable crack extension, ∆ a" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CrackLength a owl:Class ;
+    rdfs:subClassOf mto:Length ;
+    ns1:definition "length of crack measured from load line to crack tip in the CT specimen, from the perpendicular bisector of the central crack to crack tips in the MT specimen, and from the specimen front face to crack tip in the bend specimen" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CreepCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet ;
+    ns1:definition "curve relating strain and time in a creep test" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CreepElongationTime a owl:Class ;
+    rdfs:subClassOf mto:CreepRuptureTime ;
+    ns1:definition "time required for a strained test piece to obtain at the specified values of temperature, T, and initial stress, σo, a specified percentage creep elongation, x" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CreepStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:CreepStrength a owl:Class ;
+    rdfs:subClassOf mseo:Strength ;
+    ns1:definition "stress to cause specified strain in given time during a creep test at a specified constant temperature" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CreepTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test to measure the change in strain as a function of time with the test piece held at constant temperature and under constant force or constant stress" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CrossSectionArea a owl:Class ;
+    rdfs:subClassOf mto:TwoDimensionalExtent ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Cycle a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic ;
+    ns1:definition "smallest segment of the force-time, stress-time, strain-time, etc., function that is repeated periodically" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CycleNumber a owl:Class ;
+    rdfs:subClassOf mto:Number ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:CyclicStrainHardeningExponent a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:CyclicStrengthCoefficient a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue ;
+    ns1:definition "value of stress that intercepts at εpa = 1 on a cyclic graph log(σa) as a function of log(εpa)" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CyclicYieldStrength a owl:Class ;
+    rdfs:subClassOf mseo:YieldStrenght ;
+    ns1:definition "0.2% offset yield strength determined on a cyclic stress-strain curve" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:DataAcquisitionDevice a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Diagonal a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent ;
+    ns1:definition "a straight line joining two opposite corners of a square, rectangle, or other straight-sided shape" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Diameter a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:DirectVerification a owl:Class ;
+    rdfs:subClassOf mto:ActOfArtifactVerification ;
+    ns1:definition "process for determining whether critical components of a machine (such as the maximum error in the applied force, the measurement of indentation depth or size, the indenter geometry, and testing cycle parameters) are within specified tolerances or not" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Displacement a owl:Class ;
+    rdfs:subClassOf mseo:Deformation ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:DuctileFracture a owl:Class ;
+    rdfs:subClassOf mto:Fracture ;
+    ns1:definition "percentage of area of ductile fracture to total area of fracture of test piece" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:ElasticLimit a owl:Class ;
+    rdfs:subClassOf mseo:Stress ;
+    ns1:definition "",
+        "maximum stress that a material is capable of sustaining without any permanent strain remaining upon complete release of the stress" ;
+    ns2:definitionSource "",
+        "ISO 23718_2007(en)" .
+
+mto:ElectroMechanicalActuator a owl:Class ;
+    rdfs:subClassOf mto:Actuator .
+
+mto:Extensometer a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice ;
+    ns1:definition "device for measuring extension and transversal dimensional changes" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:FatigueDuctilityCoefficient a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:FatigueDuctilityExponent a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:FatigueLife a owl:Class ;
+    rdfs:subClassOf mto:Number ;
+    ns1:definition "number of applied cycles to achieve a defined failure criterion" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:FatigueMeasurementDevice a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:FatigueStrengthCoefficient a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:FatigueStrengthExponent a owl:Class ;
+    rdfs:subClassOf mseo:MaterialFatigue ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:ForceCapacity a owl:Class ;
+    rdfs:subClassOf mto:Force ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:ForceControlledFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:ForceTransducer a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:FractureToughnessTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test for measuring fracture toughness" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Frequency a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Furnace a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:GaugeLength a owl:Class ;
+    rdfs:subClassOf mto:Length ;
+    ns1:definition "length of the section of the test piece on which elongation is measured" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:GrippingDevice a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:HardnessCalibrationMachine a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "machine used for the calibration of hardness reference blocks, usually differing from a hardness testing machine by having tighter tolerances on certain parameters, such as the maximum error in the applied force, measurement of indentation depth or size, indenter geometry, and testing-cycle parameters" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:HeatTreatmentProcess a owl:Class ;
+    rdfs:subClassOf iof:ManufacturingProcess ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:HighCycleFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns1:definition "fatigue test carried out in the region where the stress behaviour is dominant and fatigue life is relatively longer" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Humidity a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000017 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:HydraulicActuator a owl:Class ;
+    rdfs:subClassOf mto:Actuator ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Indentation a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000009 ;
+    ns1:definition "impression made in the surface of the material by the indenter in an indentation test" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Indenter a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "body with a hard tip, typically of diamond, hardmetal (tungsten carbide alloy), or, in special cases, steel, of specified geometry through which the test force is applied in the course of an indentation test" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:IndirectVerification a owl:Class ;
+    rdfs:subClassOf mto:ActOfArtifactVerification ;
+    ns1:definition "process for determining the performance of a machine by means of making measurements on reference blocks" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:IzodTest a owl:Class ;
+    rdfs:subClassOf mto:ImpactTest ;
+    ns1:definition "impact test that measures the energy absorbed in breaking a notched specimen, supported as a vertical cantilever beam, by a single impact of a striker, referred to the original cross-sectional area of the specimen" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:JRCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet ;
+    ns1:definition "plot of J versus Δa, descriptive of stable crack-extension resistance for cases where plasticity effects are not negligible" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:KnoopHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness ;
+    ns1:definition "measure of a material's resistance to permanent indentation when a test force is applied through a diamond rhombic-based pyramidal indenter" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:KnoopHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns1:definition "indentation hardness test, carried out using a diamond rhombic-based pyramidal indenter, to measure the Knoop hardness of a material" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:LateralExpansion a owl:Class ;
+    rdfs:subClassOf mseo:Deformation ;
+    ns1:definition "increase in width of test piece at the final plastic hinge that forms opposite the notch just prior to the complete fracture of the test piece" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:LinearStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain ;
+    ns1:definition "strain component in a given linear direction" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:LowCycleFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns1:definition "fatigue test carried out in the region where the cyclic plastic strain behaviour is dominant and fatigue life is relatively shorter" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:MartensHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness ;
+    ns1:definition "measure of a material's resistance to both permanent and recoverable indentation when an increasing test force is applied through a diamond pyramidal indenter (either square-based or triangular-based)" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:MartensHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns1:definition "indentation hardness test, carried out using aa diamond pyramidal indenter (either square-based or triangular-based), to measure the Martens hardness of a material" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Maximum a owl:Class ;
+    rdfs:subClassOf mto:Extremum ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:MaximumForce a owl:Class ;
+    rdfs:subClassOf mto:Force ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Mean a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000145 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Minimum a owl:Class ;
+    rdfs:subClassOf mto:Extremum ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:NanoindentationTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test to measure the hardness and elastic modulus of material by indentation of a surface where the indentation depth or the depth of the plastic deformation is less than 100 nm" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:NormalStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress ;
+    ns1:definition "stress component perpendicular to a given plane" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:OpticalMeasuringSystem a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice ;
+    ns1:definition "system performing measurements of spatial coordinates exclusively by optical sensors" ;
+    ns2:definitionSource "ISO 10360-13:2021(en)" .
+
+mto:ParallelLength a owl:Class ;
+    rdfs:subClassOf mto:Length ;
+    ns1:definition "parallel length of the reduced section of the test piece" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:PeakStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:PercentageCreepElongation a owl:Class ;
+    rdfs:subClassOf mto:Elongation ;
+    ns1:definition "increase in reference length at time t, ΔLrt, at a specified temperature, expressed as a percentage of the original reference length, Lro" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:PercentageElongation a owl:Class ;
+    rdfs:subClassOf mto:Elongation ;
+    ns1:definition "elongation, expressed as a percentage of the original gauge length or reference length" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:PercentageElongationAfterCreepRupture a owl:Class ;
+    rdfs:subClassOf mto:Elongation ;
+    ns1:definition "permanent increase of the original reference length, Lro, after rupture (Lru − Lro), expressed as a percentage of the original reference length, Lro" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:PercentageInitialPlasticElongation a owl:Class ;
+    rdfs:subClassOf mto:Elongation ;
+    ns1:definition "non-proportional increase of the original reference length, Lro, due to the application of the test force" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:PlaneStrainFractureToughness a owl:Class ;
+    rdfs:subClassOf mto:FractureToughness ;
+    ns1:definition "measure of a material’s resistance to crack-extension when the stress state near the crack tip is predominantly plane strain, plastic deformation is limited, and opening mode (mode I) loading is applied" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:PlaneStrainIndentationModulus a owl:Class ;
+    rdfs:subClassOf mto:IndentationModulus ;
+    ns1:definition "measure of the equivalent isotropic average plane strain elastic modulus of a material obtained by an indentation test" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:PlasticElongationTime a owl:Class ;
+    rdfs:subClassOf mto:CreepRuptureTime ;
+    ns1:definition "time required to obtain at the specified values of temperature, T, and initial stress, σo, a specified percentage plastic elongation, x" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:ProportionalLimit a owl:Class ;
+    rdfs:subClassOf mseo:Stress ;
+    ns1:definition "greatest stress which a material is capable of sustaining without any deviation from proportionality of stress to strain" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:RawDataSet a owl:Class ;
+    rdfs:subClassOf mto:ProcessDataSet ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:ReductionOfArea a owl:Class ;
+    rdfs:subClassOf mseo:Deformation ;
+    ns1:definition "maximum change in cross-sectional area which has occurred during the test (So − Su), expressed as a percentage of the original cross-sectional area, So" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:ReferenceBlock a owl:Class ;
+    rdfs:subClassOf mto:CalibrationAccessory ;
+    ns1:definition "reference material in block form, with a certified indentation value, primarily used for the indirect verification of indentation testing machines" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:ResidualStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Resolution a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 ;
+    ns1:definition "smallest difference between indications of a meter that can be meaningfully distinguished" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:RockwellHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness ;
+    ns1:definition "measure of a material's resistance to permanent indentation when a test force is applied through a hardmetal or steel ball indenter or, for certain scales, a spheroconical diamond indenter" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:RockwellHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns1:definition "indentation hardness test, carried out using a hardmetal or steel ball indenter or a spheroconical diamond indenter, to measure the Rockwell hardness of a material" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Roughness a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:ShearFracture a owl:Class ;
+    rdfs:subClassOf mto:Fracture ;
+    ns1:definition "surface feature of fracture characteristic of regions near the root of the notch where the fracture is initiated, and in regions of final fracture at the sides and remaining ligament of the test piece, that can be quantified on broken Charpy V-notch test pieces and used to estimate the ductility of body-centered-cubic iron-based alloys" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:SignalPeriod a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Speed a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Spherical a owl:Class ;
+    rdfs:subClassOf mto:ThreeDimensionalShape ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:StainAmplitude a owl:Class ;
+    rdfs:subClassOf mto:Amplitude ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:StrainControlledFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:StrainFatigueLifeCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet ;
+    ns1:definition "curve that is the same as the Wöhler curve, or stress-life curve" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:StrainRange a owl:Class ;
+    rdfs:subClassOf mto:Range ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:StrainRate a owl:Class ;
+    rdfs:subClassOf iof:DeformationSpeed ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:StrainRatio a owl:Class ;
+    rdfs:subClassOf mto:Ratio ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:StressAmplitude a owl:Class ;
+    rdfs:subClassOf mto:Amplitude ;
+    ns1:definition "one-half of the algebraic difference between the maximum stress and the minimum stress in the stress cycle" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:StressRelaxationTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test that measures the time-dependent decrease in stress at a constant strain" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:StressStrainCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet ;
+    ns1:definition "curve representing the relation between nominal stress and corresponding strain of the parallel portion of the test piece throughout the whole process of tensile testing" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:StressStrainHysteresisLoopCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Striker a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "portion of the pendulum that contacts the test piece" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:TensileTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test that involves straining a test piece by tensile force, generally to fracture, for the purpose of determining one or more of the tensile properties" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:TestForceApplicationTime a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime ;
+    ns1:definition "period from the start of application of force to the material until the test force is reached" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:TestForceDuration a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime ;
+    ns1:definition "period during which the test force is held constant during a hardness test, beginning when the test force is fully applied and ending either at the start of its removal or at the start of the application of an additional force" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:TestPieceSupport a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "portion of the machine that serves to properly position the test piece for impact, with respect to the center of impact of the pendulum, the striker and the anvils" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:ThermoMechanicalFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns1:definition "fatigue test under the conditions where cyclic, theoretically uniform temperatures within the test section and strain fields are externally imposed, simultaneously varied and controlled" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Thermocouple a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Thickness a owl:Class ;
+    rdfs:subClassOf mto:Depth ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:TorsionTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test which consists of twisting a test piece of wire around its own axis in one direction" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:TransitionCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet ;
+    ns1:definition "curve showing the relationship between test temperature and absorbed energy (or percent shear fracture or lateral expansion) over the temperature range that the material undergoes a transformation from ductile to brittle fracture behaviour" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:TransitionRadius a owl:Class ;
+    rdfs:subClassOf mto:Radius ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:TransitionTemperature a owl:Class ;
+    rdfs:subClassOf mto:Temperature ;
+    ns1:definition "temperature corresponding to the phenomenon in which absorbed energy decreases (or increases) abruptly, and the fracture mode changes from ductile to brittle" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:TransverseStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain ;
+    ns1:definition "linear strain perpendicular to the applied force" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:TrueStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress ;
+    ns1:definition "axial stress calculated on the basis of the instantaneous cross-sectional area" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:UNotch a owl:Class ;
+    rdfs:subClassOf mto:Notch ;
+    ns1:definition "notch with a U-shaped cross-section and a specified depth and root radius" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:UncertaintyOfMeasurement a owl:Class ;
+    rdfs:subClassOf mto:Amount ;
+    ns1:definition "parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:VNotch a owl:Class ;
+    rdfs:subClassOf mto:Notch ;
+    ns1:definition "notch with a V-shaped cross-section and a specified depth and root radius" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:VickersHardness a owl:Class ;
+    rdfs:subClassOf mseo:IndentationHardness ;
+    ns1:definition "measure of a material's resistance to permanent indentation when a test force is applied through a diamond square-based pyramidal indenter" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:VickersHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns1:definition "indentation hardness test, carried out using a diamond square-based pyramidal indenter, to measure the Vickers hardness of a material" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:VickersHardnessTestEquipment a owl:Class ;
+    rdfs:subClassOf mto:HardnessMeasurementDevice ;
+    ns1:definition "equipment for measuring the Vickers indentation hardness of a material" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:WaveformDevice a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:WohlerCurve a owl:Class ;
+    rdfs:subClassOf mto:ImageMetadataSet ;
+    ns1:definition "curve expressing the relation between stress and fatigue life" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mseo:ActOfAnalysing a owl:Class ;
+    rdfs:subClassOf iof:PlannedProcess .
+
+mseo:ChemicalEntity a owl:Class ;
+    rdfs:subClassOf mseo:MatterObject .
+
+mseo:CreepResistance a owl:Class ;
+    rdfs:subClassOf mseo:Durability .
+
+mseo:CrossSection a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000009 .
+
+mseo:Ductility a owl:Class ;
+    rdfs:subClassOf iof:Capability .
+
+mseo:ElasticStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mseo:EngineeringStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mseo:EngineeringStress a owl:Class ;
+    rdfs:subClassOf mseo:Stress .
+
+mseo:FatigueStrength a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mseo:LowerYieldStrenght a owl:Class ;
+    rdfs:subClassOf mseo:YieldStrenght .
+
+mseo:MaterialComposition a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mseo:MaterialDefect a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000029 .
+
+mseo:MeasurementRegion a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000028 .
+
+mseo:PlasticStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mseo:PoissonRatio a owl:Class ;
+    rdfs:subClassOf mseo:PoissonEffect .
+
+mseo:ProofStrength a owl:Class ;
+    rdfs:subClassOf mseo:MechanicalStrength .
+
+mseo:ReboundHardness a owl:Class ;
+    rdfs:subClassOf iof:Hardness .
+
+mseo:RegionOfInterest a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000029 .
+
+mseo:Regulation a owl:Class ;
+    rdfs:subClassOf iof:PlanSpecification .
+
+mseo:ScratchHardness a owl:Class ;
+    rdfs:subClassOf iof:Hardness .
+
+mseo:Software a owl:Class ;
+    rdfs:subClassOf iof:MaterialArtifact .
+
+mseo:Specimen a owl:Class ;
+    rdfs:subClassOf iof:MaterialArtifact .
+
+mseo:TensileStrength a owl:Class ;
+    rdfs:subClassOf mseo:BreakingStrength .
+
+mseo:TimeOfBreack a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000148 .
+
+mseo:TrueStrain a owl:Class ;
+    rdfs:subClassOf mseo:Strain .
+
+mseo:UniversalTestingMachine a owl:Class ;
+    rdfs:subClassOf iof:MaterialArtifact .
+
+mseo:UpperYieldStrength a owl:Class ;
+    rdfs:subClassOf mseo:YieldStrenght .
+
+mseo:WearResistance a owl:Class ;
+    rdfs:subClassOf mseo:Durability .
+
+iof:ActionSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:Agent a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000040 .
+
+iof:Agreement a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:Algorithm a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:DescriptiveInformationContentEntity a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:DesignSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:DesignativeInformationContentEntity a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:DirectiveInformationContentEntity a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:ForceRate a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+iof:Identifier a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:MaterialResource a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000040 .
+
+iof:MeasurementInformationContentEntity a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:ObjectiveSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:Organization a owl:Class ;
+    rdfs:subClassOf iof:OrganizedGroupOfAgents .
+
+iof:Person a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000030 .
+
+iof:RequirementSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+iof:ValueExpression a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+ns2:definitionSource a owl:AnnotationProperty .
+
+bfo:BFO_0000027 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000040 .
+
+bfo:BFO_0000028 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000006 .
+
+bfo:BFO_0000031 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000002 .
+
+mto:AbsorbedImpactEnergy a owl:Class ;
+    rdfs:subClassOf mto:ImpactEnergy ;
+    ns1:definition "difference between the potential energy of the striking member just prior to impact with the specimen and the energy remaining in the member following the fracture of the specimen, as given by the readout device on the machine, which has been compensated for windage and friction loss" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:CalibrationAccessory a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "the artifact that used for calibration of a machine or device" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Depth a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Energy a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic ;
+    ns1:definition "The capacity of a physical system to do work." ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:FractureToughness a owl:Class ;
+    rdfs:subClassOf mseo:Toughness ;
+    ns1:definition "generic term for resistance to crack extension under quasistatic, monotonic loading (i.e. crack displacement)" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:ImpactEnergy a owl:Class ;
+    rdfs:subClassOf mto:Energy ;
+    ns1:definition "energy determined by means of an impact bending test" ;
+    ns2:definitionSource "ISO 7628:2010(en)" .
+
+mto:IndentationModulus a owl:Class ;
+    rdfs:subClassOf mseo:ElasticModulus ;
+    ns1:definition "estimate of the average isotropic Young’s modulus of the test piece calculated from the plane strain indentation modulus" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Radius a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Range a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000145 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Ratio a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000145 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:ShapeQuality a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Temperature a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:ThreeDimensionalShape a owl:Class ;
+    rdfs:subClassOf mto:ShapeQuality ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mseo:BreakingStrength a owl:Class ;
+    rdfs:subClassOf mseo:Toughness .
+
+mseo:ElasticModulus a owl:Class ;
+    rdfs:subClassOf mseo:Stiffness .
+
+mseo:Elasticity a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mseo:Experiment a owl:Class ;
+    rdfs:subClassOf iof:MeasurementProcess .
+
+mseo:MatterObject a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000030 .
+
+mseo:MechanicalStrength a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mseo:Plasticity a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+mseo:PoissonEffect a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000017 .
+
+mseo:Stiffness a owl:Class ;
+    rdfs:subClassOf mseo:Elasticity .
+
+iof:DeformationSpeed a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic .
+
+iof:GroupOfAgents a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000027 .
+
+iof:ManufacturingProcess a owl:Class ;
+    rdfs:subClassOf iof:PlannedProcess .
+
+iof:MeasurementProcess a owl:Class ;
+    rdfs:subClassOf iof:PlannedProcess .
+
+iof:OrganizedGroupOfAgents a owl:Class ;
+    rdfs:subClassOf iof:GroupOfAgents .
+
+iof:PlanSpecification a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity .
+
+bfo:BFO_0000001 a owl:Class .
+
+bfo:BFO_0000004 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000002 .
+
+bfo:BFO_0000006 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000141 .
+
+bfo:BFO_0000008 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000003 .
+
+bfo:BFO_0000015 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000003 .
+
+bfo:BFO_0000020 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000002 .
+
+bfo:BFO_0000029 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000141 .
+
+bfo:BFO_0000038 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000008 .
+
+bfo:BFO_0000141 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000004 .
+
+bfo:BFO_0000148 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000008 .
+
+mto:ActOfArtifactVerification a owl:Class ;
+    rdfs:subClassOf iof:PlannedProcess ;
+    ns1:definition "an Intentional Act of verifying an artifact" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Actuator a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Amount a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Amplitude a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:CreepRuptureTime a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000148 ;
+    ns1:definition "time required for the test piece, maintained at the specified temperature, T, and strained by the specified tensile stress, to rupture" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:DataSet a owl:Class ;
+    rdfs:subClassOf iof:InformationContentEntity ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Extremum a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000145 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Force a owl:Class ;
+    rdfs:subClassOf iof:ProcessCharacteristic ;
+    ns1:definition "algebraic ratio of the minimum force or stress to maximum force or stress in a cycle" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:HardnessMeasurementDevice a owl:Class ;
+    rdfs:subClassOf mseo:MeasurementDevice ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:ImpactTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test for evaluating toughness, often performed using a notched or precracked specimen, and typically quantified in terms of the potential energy absorbed by the test piece" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:Notch a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000009 ;
+    ns1:definition "cut for the initiation of fracture" ;
+    ns2:definitionSource "ISO 19044:2016(en)" .
+
+mto:Number a owl:Class ;
+    rdfs:subClassOf mto:Amount ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:ProcessDataSet a owl:Class ;
+    rdfs:subClassOf mto:DataSet ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:SizeQuality a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:TwoDimensionalExtent a owl:Class ;
+    rdfs:subClassOf mto:SizeQuality ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mseo:Durability a owl:Class ;
+    rdfs:subClassOf iof:Capability .
+
+mseo:Toughness a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+bfo:BFO_0000002 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000001 .
+
+bfo:BFO_0000003 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000001 .
+
+bfo:BFO_0000009 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000006 .
+
+bfo:BFO_0000030 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000040 .
+
+mto:ExperimentTime a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000038 ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mto:Fracture a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 ;
+    ns1:definition "unintentional separation into two or more parts" ;
+    ns2:definitionSource "ISO 11243:2016(en)" .
+
+mto:Length a owl:Class ;
+    rdfs:subClassOf mto:OneDimensionalExtent ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mseo:YieldStrenght a owl:Class ;
+    rdfs:subClassOf mseo:Plasticity .
+
+iof:Capability a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 .
+
+iof:Hardness a owl:Class ;
+    rdfs:subClassOf mseo:Strength .
+
+bfo:BFO_0000017 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000020 .
+
+bfo:BFO_0000040 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000004 .
+
+bfo:BFO_0000145 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+mto:Elongation a owl:Class ;
+    rdfs:subClassOf mseo:Deformation ;
+    ns1:definition "increase in the original gauge length, Lo, or reference length, Lr, at any moment during the test" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+iof:MaterialArtifact a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000030 .
+
+iof:PlannedProcess a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000015 .
+
+bfo:BFO_0000016 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000017 .
+
+mto:FatigueTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "test to determine fatigue life, fatigue strength at a given life, etc., by applying repeated forces or strains, or varying forces or strains, to a test piece" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:HardnessTest a owl:Class ;
+    rdfs:subClassOf mto:MechanicalTesting ;
+    ns1:definition "indentation test, carried out using a hardness testing machine, to measure the hardness of a material" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+mto:OneDimensionalExtent a owl:Class ;
+    rdfs:subClassOf mto:SizeQuality ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mseo:Deformation a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 .
+
+mseo:IndentationHardness a owl:Class ;
+    rdfs:subClassOf iof:Hardness .
+
+mseo:MeasurementDevice a owl:Class ;
+    rdfs:subClassOf iof:PieceOfEquipment .
+
+mseo:MaterialFatigue a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000016 .
+
+mseo:Strength a owl:Class ;
+    rdfs:subClassOf iof:Capability .
+
+mto:ImageMetadataSet a owl:Class ;
+    rdfs:subClassOf mto:DataSet ;
+    ns1:definition "" ;
+    ns2:definitionSource "" .
+
+mseo:Strain a owl:Class ;
+    rdfs:subClassOf mseo:Deformation .
+
+mseo:Stress a owl:Class ;
+    rdfs:subClassOf bfo:BFO_000001 .
+
+iof:ProcessCharacteristic a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000003 .
+
+bfo:BFO_000001 a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000020 .
+
+mto:MechanicalTesting a owl:Class ;
+    rdfs:subClassOf mseo:Experiment ;
+    ns1:definition "any tests for the determination of mechanical properties" ;
+    ns2:definitionSource "ISO 23718_2007(en)" .
+
+iof:PieceOfEquipment a owl:Class ;
+    rdfs:subClassOf iof:MaterialArtifact .
+
+iof:InformationContentEntity a owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000031 .
+

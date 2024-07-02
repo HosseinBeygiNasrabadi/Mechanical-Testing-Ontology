@@ -1,0 +1,1177 @@
+@prefix csvw: <https://w3.org/ns/csvw#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mto: <https://gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology/> .
+@prefix ns1: <http://www.w3.org/ns/prov#> .
+@prefix ns2: <http://qudt.org/schema/qudt/> .
+@prefix ns3: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pmd: <https://w3id.org/pmd/co/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ns2:Unit a owl:Class .
+
+ns3:definition a owl:AnnotationProperty .
+
+ns1:SoftwareAgent a owl:Class ;
+    rdfs:subClassOf ns1:Agent .
+
+mto: a owl:Ontology ;
+    dcterms:biblographicCitation "Hossein Beygi Nasrabadi and Birgit Skrotzki. Mechanical Testing Ontology (MTO). 20242, www.gitlab.com/kupferdigital/ontologies/mechanical-testing-ontology" ;
+    dcterms:created "2024.07.01" ;
+    dcterms:creator "Beygi Nasrabadi, Hossein (www.orcid.org/0000-0002-3092-0532)",
+        "Skrotzki, Birgit" ;
+    dcterms:licence "www.creativecommons.org/licenses/by/4.0/" ;
+    dcterms:title "Mechanical Testing Ontology (MTO)" ;
+    rdfs:comment "KupferDigital project (www.materialdigital.de/project/1)",
+        "The materials mechanical testing ontology (MTO) was developed by collecting the mechanical testing vocabulary from ISO 23718 standard, as well as the standardized testing processes described for various mechanical testing of materials like tensile testing, Brinell hardness test, Vickers hardness test, stress relaxation test, and fatigue testing." ;
+    owl:imports "https://raw.githubusercontent.com/materialdigital/core-ontology/main/pmd_core.ttl" ;
+    owl:versionInfo "3.0.3 (BPROV, PMDco)" .
+
+mto:ActualAbsorbedImpactEnergy a owl:Class ;
+    rdfs:subClassOf mto:AbsorbedImpactEnergy ;
+    ns3:definition "total energy required to break a test piece when tested by a pendulum impact-testing machine" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Atmosphere a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:AxialStrain a owl:Class ;
+    rdfs:subClassOf mto:Strain ;
+    ns3:definition "linear strain in the direction of the applied force" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:AxialStress a owl:Class ;
+    rdfs:subClassOf pmd:Stress ;
+    ns3:definition "stress component in the direction of the applied force" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:BendingTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test which consists in submitting a test piece to plastic deformation by bending until a specified angle of bend is reached" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:BrinellHardness a owl:Class ;
+    rdfs:subClassOf mto:Hardness ;
+    ns3:definition "measure of a material's resistance to permanent indentation when a test force is applied through a hardmetal ball indenter" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:BrinellHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns3:definition "indentation hardness test, carried out using a hardmetal ball indenter, to measure the Brinell hardness of a material" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:BrinellHardnessTestingMachine a owl:Class ;
+    rdfs:subClassOf mto:HardnessTestingMachine ;
+    ns3:definition "equipment for measuring the Brinell indentation hardness of a material" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:BrittleFracture a owl:Class ;
+    rdfs:subClassOf mto:Fracture ;
+    ns3:definition "percentage of area of brittle fracture to total area of fracture of test piece" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CharpyTest a owl:Class ;
+    rdfs:subClassOf mto:ImpactTest ;
+    ns3:definition "impact test that measures the energy absorbed from a pendulum when it strikes and fractures a test piece that is supported by two anvils" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CompressionTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test performed on a unit or component by the application of external forces of a crushing or collapsing nature" ;
+    pmd:definitionSource "ISO 10254:2015(en)" .
+
+mto:CrackExtensionResistanceCurve a owl:Class ;
+    rdfs:subClassOf pmd:Image ;
+    ns3:definition "variation in δ or J with stable crack extension, ∆ a" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CrackLength a owl:Class ;
+    rdfs:subClassOf pmd:Length ;
+    ns3:definition "length of crack measured from load line to crack tip in the CT specimen, from the perpendicular bisector of the central crack to crack tips in the MT specimen, and from the specimen front face to crack tip in the bend specimen" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CreepCurve a owl:Class ;
+    rdfs:subClassOf pmd:Image ;
+    ns3:definition "curve relating strain and time in a creep test" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CreepElongationTime a owl:Class ;
+    rdfs:subClassOf mto:CreepRuptureTime ;
+    ns3:definition "time required for a strained test piece to obtain at the specified values of temperature, T, and initial stress, σo, a specified percentage creep elongation, x" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CreepStrain a owl:Class ;
+    rdfs:subClassOf mto:Strain ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:CreepStrength a owl:Class ;
+    rdfs:subClassOf mto:MechanicalStrength ;
+    ns3:definition "stress to cause specified strain in given time during a creep test at a specified constant temperature" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CreepTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test to measure the change in strain as a function of time with the test piece held at constant temperature and under constant force or constant stress" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CrossheadSeparationRate a owl:Class ;
+    rdfs:subClassOf pmd:TestingRate ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Cycle a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "smallest segment of the force-time, stress-time, strain-time, etc., function that is repeated periodically" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CycleNumber a owl:Class ;
+    rdfs:subClassOf mto:Number ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:CyclicStrainHardeningExponent a owl:Class ;
+    rdfs:subClassOf mto:Fatigue ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:CyclicStrengthCoefficient a owl:Class ;
+    rdfs:subClassOf mto:Fatigue ;
+    ns3:definition "value of stress that intercepts at εpa = 1 on a cyclic graph log(σa) as a function of log(εpa)" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:CyclicYieldStrength a owl:Class ;
+    rdfs:subClassOf mto:YieldStrength ;
+    ns3:definition "0.2% offset yield strength determined on a cyclic stress-strain curve" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:DataAcquisitionDevice a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Depth a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Diagonal a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "a straight line joining two opposite corners of a square, rectangle, or other straight-sided shape" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:DirectVerification a owl:Class ;
+    rdfs:subClassOf mto:CalibrationProcess ;
+    ns3:definition "process for determining whether critical components of a machine (such as the maximum error in the applied force, the measurement of indentation depth or size, the indenter geometry, and testing cycle parameters) are within specified tolerances or not" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Displacement a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:DuctileFracture a owl:Class ;
+    rdfs:subClassOf mto:Fracture ;
+    ns3:definition "percentage of area of ductile fracture to total area of fracture of test piece" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:ElasticLimit a owl:Class ;
+    rdfs:subClassOf pmd:Stress ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ElasticStrain a owl:Class ;
+    rdfs:subClassOf mto:Strain .
+
+mto:ElectroMechanicalActuator a owl:Class ;
+    rdfs:subClassOf mto:Actuator ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:EngineeringStrain a owl:Class ;
+    rdfs:subClassOf mto:Strain ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:EngineeringStress a owl:Class ;
+    rdfs:subClassOf pmd:Stress ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:EstimatedStrainRateOverTheParallelLength a owl:Class ;
+    rdfs:subClassOf pmd:TestingRate ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FailureTime a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FatigueDuctilityCoefficient a owl:Class ;
+    rdfs:subClassOf mto:Fatigue ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FatigueDuctilityExponent a owl:Class ;
+    rdfs:subClassOf mto:Fatigue ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FatigueLife a owl:Class ;
+    rdfs:subClassOf mto:Number ;
+    ns3:definition "number of applied cycles to achieve a defined failure criterion" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:FatigueStrength a owl:Class ;
+    rdfs:subClassOf mto:MechanicalStrength ;
+    ns3:definition "value of stress level at which a specimen would fail at an indicated life" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:FatigueStrengthCoefficient a owl:Class ;
+    rdfs:subClassOf mto:Fatigue ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FatigueStrengthExponent a owl:Class ;
+    rdfs:subClassOf mto:Fatigue ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FatigueTestingMachine a owl:Class ;
+    rdfs:subClassOf pmd:TestingMachine ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FlatSheet a owl:Class ;
+    rdfs:subClassOf pmd:Shape ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ForceCapacity a owl:Class ;
+    rdfs:subClassOf pmd:Force ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ForceControlledFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ForceTransducer a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FractureStrength a owl:Class ;
+    rdfs:subClassOf mto:MechanicalStrength ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FractureToughnessTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test for measuring fracture toughness" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Frequency a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:GaugeLength a owl:Class ;
+    rdfs:subClassOf pmd:Length ;
+    ns3:definition "length of the section of the test piece on which elongation is measured" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:GrindingProcess a owl:Class ;
+    rdfs:subClassOf mto:SpecimenPreparationProcess ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:GrippingDevice a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:HandlingProcess a owl:Class ;
+    rdfs:subClassOf mto:SpecimenPreparationProcess ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:HighCycleFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns3:definition "fatigue test carried out in the region where the stress behaviour is dominant and fatigue life is relatively longer" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Humidity a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:HydraulicActuator a owl:Class ;
+    rdfs:subClassOf mto:Actuator ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Indentation a owl:Class ;
+    rdfs:subClassOf pmd:Location ;
+    ns3:definition "impression made in the surface of the material by the indenter in an indentation test" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Indenter a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode ;
+    ns3:definition "body with a hard tip, typically of diamond, hardmetal (tungsten carbide alloy), or, in special cases, steel, of specified geometry through which the test force is applied in the course of an indentation test" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:IndirectVerification a owl:Class ;
+    rdfs:subClassOf mto:CalibrationProcess ;
+    ns3:definition "process for determining the performance of a machine by means of making measurements on reference blocks" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:IzodTest a owl:Class ;
+    rdfs:subClassOf mto:ImpactTest ;
+    ns3:definition "impact test that measures the energy absorbed in breaking a notched specimen, supported as a vertical cantilever beam, by a single impact of a striker, referred to the original cross-sectional area of the specimen" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:JRCurve a owl:Class ;
+    rdfs:subClassOf pmd:Image ;
+    ns3:definition "plot of J versus Δa, descriptive of stable crack-extension resistance for cases where plasticity effects are not negligible" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:KnoopHardness a owl:Class ;
+    rdfs:subClassOf mto:Hardness ;
+    ns3:definition "measure of a material's resistance to permanent indentation when a test force is applied through a diamond rhombic-based pyramidal indenter" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:KnoopHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns3:definition "indentation hardness test, carried out using a diamond rhombic-based pyramidal indenter, to measure the Knoop hardness of a material" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:LateralExpansion a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "increase in width of test piece at the final plastic hinge that forms opposite the notch just prior to the complete fracture of the test piece" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:LinearStrain a owl:Class ;
+    rdfs:subClassOf mto:Strain ;
+    ns3:definition "strain component in a given linear direction" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:LowCycleFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns3:definition "fatigue test carried out in the region where the cyclic plastic strain behaviour is dominant and fatigue life is relatively shorter" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:LowerYieldStrength a owl:Class ;
+    rdfs:subClassOf mto:YieldStrength ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:MachiningProcess a owl:Class ;
+    rdfs:subClassOf mto:SpecimenPreparationProcess ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:MarkingProcess a owl:Class ;
+    rdfs:subClassOf mto:SpecimenPreparationProcess ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:MartensHardness a owl:Class ;
+    rdfs:subClassOf mto:Hardness ;
+    ns3:definition "measure of a material's resistance to both permanent and recoverable indentation when an increasing test force is applied through a diamond pyramidal indenter (either square-based or triangular-based)" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:MartensHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns3:definition "indentation hardness test, carried out using aa diamond pyramidal indenter (either square-based or triangular-based), to measure the Martens hardness of a material" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Maximum a owl:Class ;
+    rdfs:subClassOf mto:Extremum ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:MaximumForce a owl:Class ;
+    rdfs:subClassOf pmd:Force ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Mean a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Minimum a owl:Class ;
+    rdfs:subClassOf mto:Extremum ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:NanoindentationTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test to measure the hardness and elastic modulus of material by indentation of a surface where the indentation depth or the depth of the plastic deformation is less than 100 nm" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:NormalStress a owl:Class ;
+    rdfs:subClassOf pmd:Stress ;
+    ns3:definition "stress component perpendicular to a given plane" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:ParallelLength a owl:Class ;
+    rdfs:subClassOf pmd:Length ;
+    ns3:definition "parallel length of the reduced section of the test piece" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:PeakStress a owl:Class ;
+    rdfs:subClassOf pmd:Stress ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:PercentageCreepElongation a owl:Class ;
+    rdfs:subClassOf mto:Elongation ;
+    ns3:definition "increase in reference length at time t, ΔLrt, at a specified temperature, expressed as a percentage of the original reference length, Lro" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:PercentageElongation a owl:Class ;
+    rdfs:subClassOf mto:Elongation ;
+    ns3:definition "elongation, expressed as a percentage of the original gauge length or reference length" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:PercentageElongationAfterCreepRupture a owl:Class ;
+    rdfs:subClassOf mto:Elongation ;
+    ns3:definition "permanent increase of the original reference length, Lro, after rupture (Lru − Lro), expressed as a percentage of the original reference length, Lro" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:PercentageInitialPlasticElongation a owl:Class ;
+    rdfs:subClassOf mto:Elongation ;
+    ns3:definition "non-proportional increase of the original reference length, Lro, due to the application of the test force" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:PercentagePlasticExtensionAtMaximumForce a owl:Class ;
+    rdfs:subClassOf pmd:PecentageExtension ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:PercentageTotalExtensionAtFracture a owl:Class ;
+    rdfs:subClassOf pmd:PecentageExtension ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:PercentageTotalExtensionAtMaximumForce a owl:Class ;
+    rdfs:subClassOf pmd:PecentageExtension ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:PercentageYieldPointExtension a owl:Class ;
+    rdfs:subClassOf pmd:PecentageExtension ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:PermanentSetStrength a owl:Class ;
+    rdfs:subClassOf mto:MechanicalStrength ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:PlaneStrainFractureToughness a owl:Class ;
+    rdfs:subClassOf mto:FractureToughness ;
+    ns3:definition "measure of a material’s resistance to crack-extension when the stress state near the crack tip is predominantly plane strain, plastic deformation is limited, and opening mode (mode I) loading is applied" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:PlaneStrainIndentationModulus a owl:Class ;
+    rdfs:subClassOf mto:IndentationModulus ;
+    ns3:definition "measure of the equivalent isotropic average plane strain elastic modulus of a material obtained by an indentation test" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:PlasticElongationTime a owl:Class ;
+    rdfs:subClassOf mto:CreepRuptureTime ;
+    ns3:definition "time required to obtain at the specified values of temperature, T, and initial stress, σo, a specified percentage plastic elongation, x" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:PlasticStrain a owl:Class ;
+    rdfs:subClassOf mto:Strain ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:PoissonRatio a owl:Class ;
+    rdfs:subClassOf pmd:Index ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:PolishingProcess a owl:Class ;
+    rdfs:subClassOf mto:SpecimenPreparationProcess ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ProofStrengthPlasticExtension a owl:Class ;
+    rdfs:subClassOf mto:ProofStrength ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ProofStrengthTotalExtension a owl:Class ;
+    rdfs:subClassOf mto:ProofStrength ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ProportionalLimit a owl:Class ;
+    rdfs:subClassOf pmd:Stress ;
+    ns3:definition "greatest stress which a material is capable of sustaining without any deviation from proportionality of stress to strain" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:ProportionalityCoefficient a owl:Class ;
+    rdfs:subClassOf pmd:Index ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ReductionOfArea a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "maximum change in cross-sectional area which has occurred during the test (So − Su), expressed as a percentage of the original cross-sectional area, So" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:ReferenceBlock a owl:Class ;
+    rdfs:subClassOf mto:CalibrationAccessory ;
+    ns3:definition "reference material in block form, with a certified indentation value, primarily used for the indirect verification of indentation testing machines" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:ResidualStress a owl:Class ;
+    rdfs:subClassOf pmd:Stress ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Resolution a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "smallest difference between indications of a meter that can be meaningfully distinguished" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:RockwellHardness a owl:Class ;
+    rdfs:subClassOf mto:Hardness ;
+    ns3:definition "measure of a material's resistance to permanent indentation when a test force is applied through a hardmetal or steel ball indenter or, for certain scales, a spheroconical diamond indenter" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:RockwellHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns3:definition "indentation hardness test, carried out using a hardmetal or steel ball indenter or a spheroconical diamond indenter, to measure the Rockwell hardness of a material" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:RoundBar a owl:Class ;
+    rdfs:subClassOf pmd:Shape ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:SamplingProcess a owl:Class ;
+    rdfs:subClassOf mto:SpecimenPreparationProcess ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ShearFracture a owl:Class ;
+    rdfs:subClassOf mto:Fracture ;
+    ns3:definition "surface feature of fracture characteristic of regions near the root of the notch where the fracture is initiated, and in regions of final fracture at the sides and remaining ligament of the test piece, that can be quantified on broken Charpy V-notch test pieces and used to estimate the ductility of body-centered-cubic iron-based alloys" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:SignalPeriod a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:SlopeOfTheElasticPart a owl:Class ;
+    rdfs:subClassOf pmd:ModulusOfElasticity ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Speed a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:StainAmplitude a owl:Class ;
+    rdfs:subClassOf mto:Amplitude ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:StoringProcess a owl:Class ;
+    rdfs:subClassOf mto:SpecimenPreparationProcess ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:StrainControlledFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:StrainFatigueLifeCurve a owl:Class ;
+    rdfs:subClassOf pmd:Image ;
+    ns3:definition "curve that is the same as the Wöhler curve, or stress-life curve" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:StrainRange a owl:Class ;
+    rdfs:subClassOf mto:Range ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:StrainRate a owl:Class ;
+    rdfs:subClassOf pmd:TestingRate ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:StrainRatio a owl:Class ;
+    rdfs:subClassOf mto:Ratio,
+        pmd:Index ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:StressAmplitude a owl:Class ;
+    rdfs:subClassOf mto:Amplitude ;
+    ns3:definition "one-half of the algebraic difference between the maximum stress and the minimum stress in the stress cycle" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:StressRate a owl:Class ;
+    rdfs:subClassOf pmd:TestingRate ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:StressRelaxationTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test that measures the time-dependent decrease in stress at a constant strain" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:StressStrainCurve a owl:Class ;
+    rdfs:subClassOf pmd:Image ;
+    ns3:definition "curve representing the relation between nominal stress and corresponding strain of the parallel portion of the test piece throughout the whole process of tensile testing" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:StressStrainHysteresisLoopCurve a owl:Class ;
+    rdfs:subClassOf pmd:Image ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:TensileStrength a owl:Class ;
+    rdfs:subClassOf mto:BreakingStrength,
+        mto:MechanicalStrength ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:TensileTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test that involves straining a test piece by tensile force, generally to fracture, for the purpose of determining one or more of the tensile properties" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:TensileTestingMachine a owl:Class ;
+    rdfs:subClassOf pmd:TestingMachine ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:TestForceApplicationTime a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime ;
+    ns3:definition "period from the start of application of force to the material until the test force is reached" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:TestForceDuration a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime ;
+    ns3:definition "period during which the test force is held constant during a hardness test, beginning when the test force is fully applied and ending either at the start of its removal or at the start of the application of an additional force" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:ThermoMechanicalFatigueTest a owl:Class ;
+    rdfs:subClassOf mto:FatigueTest ;
+    ns3:definition "fatigue test under the conditions where cyclic, theoretically uniform temperatures within the test section and strain fields are externally imposed, simultaneously varied and controlled" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:TorsionTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test which consists of twisting a test piece of wire around its own axis in one direction" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:TransitionCurve a owl:Class ;
+    rdfs:subClassOf pmd:Image ;
+    ns3:definition "curve showing the relationship between test temperature and absorbed energy (or percent shear fracture or lateral expansion) over the temperature range that the material undergoes a transformation from ductile to brittle fracture behaviour" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:TransitionRadius a owl:Class ;
+    rdfs:subClassOf pmd:Radius ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:TransitionTemperature a owl:Class ;
+    rdfs:subClassOf pmd:Temperature ;
+    ns3:definition "temperature corresponding to the phenomenon in which absorbed energy decreases (or increases) abruptly, and the fracture mode changes from ductile to brittle" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:TransverseStrain a owl:Class ;
+    rdfs:subClassOf mto:Strain ;
+    ns3:definition "linear strain perpendicular to the applied force" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:TrueStrain a owl:Class ;
+    rdfs:subClassOf mto:Strain ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:TrueStress a owl:Class ;
+    rdfs:subClassOf pmd:Stress ;
+    ns3:definition "axial stress calculated on the basis of the instantaneous cross-sectional area" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:UNotch a owl:Class ;
+    rdfs:subClassOf mto:Notch ;
+    ns3:definition "notch with a U-shaped cross-section and a specified depth and root radius" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:UncertaintyOfMeasurement a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "parameter, associated with the result of a measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:UniaxialTensionCompressionMachine a owl:Class ;
+    rdfs:subClassOf pmd:TestingMachine ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:UpperYieldStrength a owl:Class ;
+    rdfs:subClassOf mto:YieldStrength ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:VNotch a owl:Class ;
+    rdfs:subClassOf mto:Notch ;
+    ns3:definition "notch with a V-shaped cross-section and a specified depth and root radius" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:VickersHardness a owl:Class ;
+    rdfs:subClassOf mto:Hardness ;
+    ns3:definition "measure of a material's resistance to permanent indentation when a test force is applied through a diamond square-based pyramidal indenter" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:VickersHardnessTest a owl:Class ;
+    rdfs:subClassOf mto:HardnessTest ;
+    ns3:definition "indentation hardness test, carried out using a diamond square-based pyramidal indenter, to measure the Vickers hardness of a material" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:VickersHardnessTestingMachine a owl:Class ;
+    rdfs:subClassOf mto:HardnessTestingMachine ;
+    ns3:definition "equipment for measuring the Vickers indentation hardness of a material" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:WaveformDevice a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:WohlerCurve a owl:Class ;
+    rdfs:subClassOf pmd:Image ;
+    ns3:definition "curve expressing the relation between stress and fatigue life" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+csvw:Table a owl:Class .
+
+pmd:Algorithm a owl:Class ;
+    rdfs:subClassOf pmd:Method .
+
+pmd:Caliper a owl:Class ;
+    rdfs:subClassOf pmd:MeasuringDevice .
+
+pmd:ChemicalComposition a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:CreepStress a owl:Class ;
+    rdfs:subClassOf pmd:Stress .
+
+pmd:CrossSectionArea a owl:Class ;
+    rdfs:subClassOf pmd:Area .
+
+pmd:Dataset a owl:Class ;
+    rdfs:subClassOf pmd:DigitalEntity .
+
+pmd:Date a owl:Class ;
+    rdfs:subClassOf pmd:Time .
+
+pmd:Diameter a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:DimensionMeasuringDevice a owl:Class ;
+    rdfs:subClassOf pmd:MeasuringDevice .
+
+pmd:Distance a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Document a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Extensometer a owl:Class ;
+    rdfs:subClassOf pmd:MeasuringDevice .
+
+pmd:Function a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Furnace a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode .
+
+pmd:GeometryChangingProcess a owl:Class ;
+    rdfs:subClassOf pmd:Process .
+
+pmd:Grips a owl:Class ;
+    rdfs:subClassOf pmd:Component .
+
+pmd:GripsAlignment a owl:Class ;
+    rdfs:subClassOf pmd:AssemblingProcess .
+
+pmd:HeatTreatmentProcess a owl:Class ;
+    rdfs:subClassOf pmd:ConditioningProcess .
+
+pmd:Laboratory a owl:Class ;
+    rdfs:subClassOf ns1:Organization .
+
+pmd:LoadCell a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode .
+
+pmd:LoadCellCapacity a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Measurement a owl:Class ;
+    rdfs:subClassOf pmd:ValueScope .
+
+pmd:MeasuringProcess a owl:Class ;
+    rdfs:subClassOf pmd:AnalysingProcess .
+
+pmd:Metadata a owl:Class ;
+    rdfs:subClassOf pmd:DataScope .
+
+pmd:MountingProcess a owl:Class ;
+    rdfs:subClassOf pmd:AssemblingProcess .
+
+pmd:NodeInfo a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Norm a owl:Class ;
+    rdfs:subClassOf pmd:Method .
+
+pmd:Note a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Operator a owl:Class ;
+    rdfs:subClassOf ns1:Person .
+
+pmd:PrimaryData a owl:Class ;
+    rdfs:subClassOf pmd:DataScope .
+
+pmd:ProcessDuration a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Roughness a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:SecondaryData a owl:Class ;
+    rdfs:subClassOf pmd:DataScope .
+
+pmd:SetPoint a owl:Class ;
+    rdfs:subClassOf pmd:ValueScope .
+
+pmd:Specimen a owl:Class ;
+    rdfs:subClassOf pmd:Sample .
+
+pmd:Stiffness a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:TemperatureChangingProcess a owl:Class ;
+    rdfs:subClassOf pmd:ConditioningProcess .
+
+pmd:TestPiece a owl:Class ;
+    rdfs:subClassOf pmd:Sample .
+
+pmd:TestPieceInfo a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:TestPieceName a owl:Class ;
+    rdfs:subClassOf pmd:Identifier .
+
+pmd:Thermocouple a owl:Class ;
+    rdfs:subClassOf pmd:MeasuringDevice .
+
+pmd:Thickness a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:definitionSource a owl:AnnotationProperty .
+
+ns1:Activity a owl:Class .
+
+ns1:Organization a owl:Class ;
+    rdfs:subClassOf ns1:Agent .
+
+ns1:Person a owl:Class ;
+    rdfs:subClassOf ns1:Agent .
+
+mto:AbsorbedImpactEnergy a owl:Class ;
+    rdfs:subClassOf mto:ImpactEnergy ;
+    ns3:definition "difference between the potential energy of the striking member just prior to impact with the specimen and the energy remaining in the member following the fracture of the specimen, as given by the readout device on the machine, which has been compensated for windage and friction loss" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:BreakingStrength a owl:Class ;
+    rdfs:subClassOf mto:Toughness ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:CalibrationAccessory a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode ;
+    ns3:definition "the artifact that used for calibration of a machine or device" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Energy a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "The capacity of a physical system to do work." ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Failure a owl:Class ;
+    rdfs:subClassOf pmd:Mechanical ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FractureToughness a owl:Class ;
+    rdfs:subClassOf mto:Toughness ;
+    ns3:definition "generic term for resistance to crack extension under quasistatic, monotonic loading (i.e. crack displacement)" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:ImpactEnergy a owl:Class ;
+    rdfs:subClassOf mto:Energy ;
+    ns3:definition "energy determined by means of an impact bending test" ;
+    pmd:definitionSource "ISO 7628:2010(en)" .
+
+mto:IndentationModulus a owl:Class ;
+    rdfs:subClassOf pmd:ModulusOfElasticity ;
+    ns3:definition "estimate of the average isotropic Young’s modulus of the test piece calculated from the plane strain indentation modulus" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Range a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Ratio a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+pmd:Area a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Component a owl:Class ;
+    rdfs:subClassOf pmd:Object .
+
+pmd:Duration a owl:Class ;
+    rdfs:subClassOf pmd:Time .
+
+pmd:EngineeredMaterial a owl:Class ;
+    rdfs:subClassOf pmd:Object .
+
+pmd:Extension a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Identifier a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:MaterialProperty a owl:Class ;
+    rdfs:subClassOf pmd:MaterialRelated .
+
+pmd:MaterialRelated a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Radius a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Temperature a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+mto:Actuator a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Amplitude a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:CalibrationProcess a owl:Class ;
+    rdfs:subClassOf pmd:Process ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:CreepRuptureTime a owl:Class ;
+    rdfs:subClassOf mto:ExperimentTime ;
+    ns3:definition "time required for the test piece, maintained at the specified temperature, T, and strained by the specified tensile stress, to rupture" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Extremum a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:HardnessTestingMachine a owl:Class ;
+    rdfs:subClassOf pmd:TestingMachine ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ImpactTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test for evaluating toughness, often performed using a notched or precracked specimen, and typically quantified in terms of the potential energy absorbed by the test piece" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Notch a owl:Class ;
+    rdfs:subClassOf pmd:Location ;
+    ns3:definition "cut for the initiation of fracture" ;
+    pmd:definitionSource "ISO 19044:2016(en)" .
+
+mto:Number a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:ProofStrength a owl:Class ;
+    rdfs:subClassOf mto:MechanicalStrength ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Toughness a owl:Class ;
+    rdfs:subClassOf pmd:Mechanical ;
+    ns3:definition "energy absorbed by the specimen equivalent to the area under the load-deflection curve between the load and a specified net deflection" ;
+    pmd:definitionSource "ISO 21022:2018(en)" .
+
+pmd:AnalysingProcess a owl:Class ;
+    rdfs:subClassOf pmd:Process .
+
+pmd:AssemblingProcess a owl:Class ;
+    rdfs:subClassOf pmd:Process .
+
+pmd:ConditioningProcess a owl:Class ;
+    rdfs:subClassOf pmd:Process .
+
+pmd:DigitalEntity a owl:Class ;
+    rdfs:subClassOf ns1:Entity .
+
+pmd:Force a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Location a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Method a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:ModulusOfElasticity a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Object a owl:Class ;
+    rdfs:subClassOf ns1:Entity .
+
+pmd:Sample a owl:Class ;
+    rdfs:subClassOf pmd:EngineeredMaterial .
+
+pmd:Shape a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Time a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:ValueScope a owl:Class ;
+    rdfs:subClassOf ns1:Entity .
+
+mto:Fracture a owl:Class ;
+    rdfs:subClassOf mto:Failure ;
+    ns3:definition "unintentional separation into two or more parts" ;
+    pmd:definitionSource "ISO 11243:2016(en)" .
+
+mto:YieldStrength a owl:Class ;
+    rdfs:subClassOf mto:MechanicalStrength ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+pmd:DataScope a owl:Class ;
+    rdfs:subClassOf ns1:Entity .
+
+pmd:Index a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:Length a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+ns1:Agent a owl:Class .
+
+mto:Elongation a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "increase in the original gauge length, Lo, or reference length, Lr, at any moment during the test" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+pmd:MeasuringDevice a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode .
+
+pmd:PecentageExtension a owl:Class ;
+    rdfs:subClassOf pmd:Extension .
+
+pmd:TestingMachine a owl:Class ;
+    rdfs:subClassOf pmd:ProcessingNode .
+
+pmd:TestingRate a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+ns1:Entity a owl:Class .
+
+mto:ExperimentTime a owl:Class ;
+    rdfs:subClassOf pmd:Duration ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:FatigueTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "test to determine fatigue life, fatigue strength at a given life, etc., by applying repeated forces or strains, or varying forces or strains, to a test piece" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+mto:Hardness a owl:Class ;
+    rdfs:subClassOf pmd:Mechanical ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:HardnessTest a owl:Class ;
+    rdfs:subClassOf pmd:MechanicalTestingProcess ;
+    ns3:definition "indentation test, carried out using a hardness testing machine, to measure the hardness of a material" ;
+    pmd:definitionSource "ISO 23718_2007(en)" .
+
+pmd:Mechanical a owl:Class ;
+    rdfs:subClassOf pmd:MaterialProperty .
+
+mto:Fatigue a owl:Class ;
+    rdfs:subClassOf pmd:Mechanical ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+pmd:Process a owl:Class ;
+    rdfs:subClassOf ns1:Activity .
+
+mto:MechanicalStrength a owl:Class ;
+    rdfs:subClassOf pmd:Mechanical ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:SpecimenPreparationProcess a owl:Class ;
+    rdfs:subClassOf pmd:Process ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+mto:Strain a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject ;
+    ns3:definition "" ;
+    pmd:definitionSource "" .
+
+pmd:Image a owl:Class ;
+    rdfs:subClassOf pmd:DigitalEntity .
+
+pmd:Stress a owl:Class ;
+    rdfs:subClassOf pmd:ValueObject .
+
+pmd:MechanicalTestingProcess a owl:Class ;
+    rdfs:subClassOf pmd:AnalysingProcess .
+
+pmd:ProcessingNode a owl:Class ;
+    rdfs:subClassOf ns1:Agent .
+
+pmd:ValueObject a owl:Class ;
+    rdfs:subClassOf ns1:Entity .
+
